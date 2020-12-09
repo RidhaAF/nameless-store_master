@@ -11,32 +11,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Home</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="/products" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Products
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/products">All Product</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Apple</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Realme</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Oppo</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Samsung</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Xiaomi</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Product</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+
+            <!-- ini harusnya pake icon -->
             <div class="navbar-nav">
                 <a class="nav-link" href="#">Shopping Cart</a>
-                <a class="nav-link" href="#">Account</a>
+                <a class="nav-link" href="#">Login</a>
             </div>
         </div>
     </div>
