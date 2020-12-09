@@ -32,7 +32,14 @@
 
 <!-- Start Card -->
 <div class="container mb-5">
-    <div class="row">
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <h5>Ini harusnya read dari database, bukan manual</h5>
+        </div>
+        <div class="form-inline col-md-6">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+        </div>
         <div class="col-sm">
             <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-blue-hero?wid=470&hei=556&fmt=png-alpha&.v=1604021661000" class="rounded mx-auto d-block" width="250">
             <h5 class="card-title">iPhone 12 Pro</h5>
@@ -52,7 +59,7 @@
             <a href="#" class="btn btn-primary">Beli Sekarang</a>
         </div>
     </div>
-    <div class="row mb-4">
+    <div class="row">
         <div class="col-sm">
             <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-blue-hero?wid=470&hei=556&fmt=png-alpha&.v=1604021661000" class="rounded mx-auto d-block" width="250">
             <h5 class="card-title">iPhone 12 Pro</h5>
