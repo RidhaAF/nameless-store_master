@@ -30,70 +30,63 @@
 </div>
 <!-- End Carousel -->
 
+<!-- Start Search -->
+<!-- End Search -->
+
 <!-- Start Card -->
-<div class="container mb-5">
-    <div class="row mt-5">
-        <div class="col-md-6">
-            <h5>Ini harusnya read dari database, bukan manual</h5>
-        </div>
-        <div class="form-inline col-md-6">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
-        </div>
-        <div class="col-sm">
-            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-blue-hero?wid=470&hei=556&fmt=png-alpha&.v=1604021661000" class="rounded mx-auto d-block" width="250">
-            <h5 class="card-title">iPhone 12 Pro</h5>
-            <p class="card-text">Rp.18.499.000</p>
-            <a href="#" class="btn btn-primary">Beli Sekarang</a>
-        </div>
-        <div class="col-sm">
-            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-black-select-2020?wid=470&hei=556&fmt=png-alpha&.v=1604343702000" class="rounded mx-auto d-block" width="250">
-            <h5 class="card-title">iPhone 12</h5>
-            <p class="card-text">Rp.14.999.000</p>
-            <a href="#" class="btn btn-primary">Beli Sekarang</a>
-        </div>
-        <div class="col-sm">
-            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-mini-green-select-2020?wid=470&hei=556&fmt=png-alpha&.v=1604343706000" class="rounded mx-auto d-block" width="250">
-            <h5 class="card-title">iPhone 12 Mini</h5>
-            <p class="card-text">Rp.12.999.000</p>
-            <a href="#" class="btn btn-primary">Beli Sekarang</a>
+<div class="container">
+    <div class="row mt-3 justify-content-center">
+        <div class="col-md-5">
+            <div class="input-group mt-5">
+                <input type="text" class="form-control" placeholder="Cari product.." id="search-input">
+                <div class="input-group-append">
+                    <button class="btn btn-dark" type="button" id="search-button"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm">
-            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-blue-hero?wid=470&hei=556&fmt=png-alpha&.v=1604021661000" class="rounded mx-auto d-block" width="250">
-            <h5 class="card-title">iPhone 12 Pro</h5>
-            <p class="card-text">Rp.18.499.000</p>
-            <a href="#" class="btn btn-primary">Beli Sekarang</a>
+    <h1 class="text-center mt-4">Hot Products</h1>
+    <div class="row mt-2 justify-content-center">
+        <div class="col-sm-4 mt-3">
+            <div class="card" style="width: 21rem;">
+                <img src="/img/iphone-12-pro.png" class="card-img-top">
+                <div class="card-body">
+                    <h6 class="card-title">Apple iPhone 12 Pro</h6>
+                    <p class="card-text">Rp. 18.499.000,-</p>
+                    <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                </div>
+            </div>
         </div>
-        <div class="col-sm">
-            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-black-select-2020?wid=470&hei=556&fmt=png-alpha&.v=1604343702000" class="rounded mx-auto d-block" width="250">
-            <h5 class="card-title">iPhone 12</h5>
-            <p class="card-text">Rp.14.999.000</p>
-            <a href="#" class="btn btn-primary">Beli Sekarang</a>
+        <div class="col-sm-4 mt-3">
+            <div class="card" style="width: 21rem;">
+                <img src="/img/reno5-pro.png" class="card-img-top">
+                <div class="card-body">
+                    <h6 class="card-title">Oppo Reno5 Pro 5G</h6>
+                    <p class="card-text">Rp. 8.400.000,-</p>
+                    <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                </div>
+            </div>
         </div>
-        <div class="col-sm">
-            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-mini-green-select-2020?wid=470&hei=556&fmt=png-alpha&.v=1604343706000" class="rounded mx-auto d-block" width="250">
-            <h5 class="card-title">iPhone 12 Mini</h5>
-            <p class="card-text">Rp.12.999.000</p>
-            <a href="#" class="btn btn-primary">Beli Sekarang</a>
+        <div class="col-sm-4 mt-3">
+            <div class="card" style="width: 21rem;">
+                <img src="/img/mi-10t-pro.png" class="card-img-top">
+                <div class="card-body">
+                    <h6 class="card-title">Xiaomi Mi 10T Pro 5G</h6>
+                    <p class="card-text">Rp. 8.499.000,-</p>
+                    <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<!-- <div class="container my-3">        
-        <div class="card" style="width: 18rem;">
-            <img src="assets/img/iphone-12-pro-max-blue-hero.png" class="card-img-top" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">iPhone 12 Pro Max</h5>
-            <p class="card-text">Rp.20.499.000</p>
-            <a href="#" class="btn btn-primary">Beli Sekarang</a>
-            </div>
-        </div>
-    </div> -->
 <!-- End Card -->
 
 <!-- Start About Us -->
-<div class="bg-dark text-white p-5">
+<div class="bg-dark text-white p-5 mt-5">
     <div class="container">
         <div class="row">
             <div class="col-sm-3">
