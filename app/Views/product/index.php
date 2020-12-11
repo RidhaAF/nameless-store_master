@@ -6,16 +6,17 @@
 <div class="container">
     <div class="row mt-5 justify-content-center">
         <div class="col-md-5">
-            <div class="input-group mt-5">
-                <input type="text" class="form-control" placeholder="Cari product.." id="search-input">
-                <div class="input-group-append">
-                    <button class="btn btn-dark" type="button" id="search-button"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
-                            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
-                        </svg>
-                    </button>
+            <form action="" method="POST">
+                <div class="input-group mt-5">
+                    <input type="text" class="form-control" placeholder="Cari product.." name="keyword">
+                    <div class="input-group-append">
+                        <button class="btn btn-dark" type="submit" name="submit"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                                <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                            </svg></button>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     <div class="row mt-2 justify-content-center">
