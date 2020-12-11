@@ -15,16 +15,21 @@ class Product extends BaseController
 
     public function index()
     {
-        // $keyword = $this->request->getVar('keyword');
-        // if ($keyword) {
-        //     $product = $this->productModel->search($keyword);
-        // } else {
-        //     $product = $this->productModel;
-        // }
+
+        $currentPage = $this->request->getVar('page_product') ? $this->request->getVar('page_product') : 1;
+
+        $keyword = $this->request->getVar('keyword');
+        if ($keyword) {
+            $product = $this->productModel->search($keyword);
+        } else {
+            $product = $this->productModel;
+        }
 
         $data = [
-            'product' => $this->ProductModel->findAll()
-            // 'product' => $product->paginate(10, 'product')
+            // 'product' => $this->productModel->findAll(),
+            'product' => $product->paginate(10, 'product'),
+            'pager' => $this->productModel->pager,
+            'currentPage' => $currentPage
         ];
 
         // cara connect db dengan model
