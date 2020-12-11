@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Des 2020 pada 09.46
--- Versi server: 10.4.14-MariaDB
--- Versi PHP: 7.4.11
+-- Generation Time: Dec 11, 2020 at 10:05 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `auth_activation_attempts`
+-- Table structure for table `auth_activation_attempts`
 --
 
 CREATE TABLE `auth_activation_attempts` (
@@ -36,7 +36,7 @@ CREATE TABLE `auth_activation_attempts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `auth_activation_attempts`
+-- Dumping data for table `auth_activation_attempts`
 --
 
 INSERT INTO `auth_activation_attempts` (`id`, `ip_address`, `user_agent`, `token`, `created_at`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `auth_activation_attempts` (`id`, `ip_address`, `user_agent`, `token
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `auth_groups`
+-- Table structure for table `auth_groups`
 --
 
 CREATE TABLE `auth_groups` (
@@ -59,7 +59,7 @@ CREATE TABLE `auth_groups` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `auth_groups_permissions`
+-- Table structure for table `auth_groups_permissions`
 --
 
 CREATE TABLE `auth_groups_permissions` (
@@ -70,7 +70,7 @@ CREATE TABLE `auth_groups_permissions` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `auth_groups_users`
+-- Table structure for table `auth_groups_users`
 --
 
 CREATE TABLE `auth_groups_users` (
@@ -81,7 +81,7 @@ CREATE TABLE `auth_groups_users` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `auth_logins`
+-- Table structure for table `auth_logins`
 --
 
 CREATE TABLE `auth_logins` (
@@ -94,7 +94,7 @@ CREATE TABLE `auth_logins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `auth_logins`
+-- Dumping data for table `auth_logins`
 --
 
 INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `success`) VALUES
@@ -104,7 +104,7 @@ INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `succ
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `auth_permissions`
+-- Table structure for table `auth_permissions`
 --
 
 CREATE TABLE `auth_permissions` (
@@ -116,7 +116,7 @@ CREATE TABLE `auth_permissions` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `auth_reset_attempts`
+-- Table structure for table `auth_reset_attempts`
 --
 
 CREATE TABLE `auth_reset_attempts` (
@@ -131,7 +131,7 @@ CREATE TABLE `auth_reset_attempts` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `auth_tokens`
+-- Table structure for table `auth_tokens`
 --
 
 CREATE TABLE `auth_tokens` (
@@ -145,7 +145,7 @@ CREATE TABLE `auth_tokens` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `auth_users_permissions`
+-- Table structure for table `auth_users_permissions`
 --
 
 CREATE TABLE `auth_users_permissions` (
@@ -156,7 +156,7 @@ CREATE TABLE `auth_users_permissions` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -170,7 +170,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`, `batch`) VALUES
@@ -179,7 +179,37 @@ INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `product`
+--
+
+CREATE TABLE `product` (
+  `id` int(11) NOT NULL,
+  `brand` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `slug` varchar(255) NOT NULL,
+  `price` int(50) NOT NULL,
+  `os` varchar(255) NOT NULL,
+  `storage` varchar(255) NOT NULL,
+  `cpu` varchar(255) NOT NULL,
+  `ram` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `brand`, `type`, `slug`, `price`, `os`, `storage`, `cpu`, `ram`, `image`) VALUES
+(1, 'Apple', 'iPhone 12 Mini', 'iphone-12-mini', 12999000, 'iOS 14', '64GB', 'Apple A14 Bionic', '4GB', 'iphone-12-mini.png'),
+(2, 'Samsung', 'Galaxy Z Fold 2', 'galaxy-z-fold-2', 31990000, 'Android 10', '256GB', 'Qualcomm SM8250 Snapdragon 865+', '12GB', 'fold-2.png'),
+(3, 'Xiaomi', 'Mi 10T Pro 5G', 'mi-10t-pro', 8499000, 'Android 10', '128GB', 'Qualcomm SM8250 Snapdragon 865', '8GB', 'mi-10t-pro.png'),
+(4, 'Apple', 'iPhone 12 Pro', 'iphone-12-pro', 18499000, 'iOS 14', '128GB', 'Apple A14 Bionic', '6GB', 'iphone-12-pro.png'),
+(5, 'Oppo', 'Reno5 Pro 5G', 'reno5-pro', 8400000, 'Android 11', '128GB', 'Mediatek MT6889Z Dimensity 1000+', '8GB', 'reno5-pro.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -201,7 +231,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `email`, `username`, `password_hash`, `reset_hash`, `reset_at`, `reset_expires`, `activate_hash`, `status`, `status_message`, `active`, `force_pass_reset`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -212,33 +242,33 @@ INSERT INTO `users` (`id`, `email`, `username`, `password_hash`, `reset_hash`, `
 --
 
 --
--- Indeks untuk tabel `auth_activation_attempts`
+-- Indexes for table `auth_activation_attempts`
 --
 ALTER TABLE `auth_activation_attempts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `auth_groups`
+-- Indexes for table `auth_groups`
 --
 ALTER TABLE `auth_groups`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `auth_groups_permissions`
+-- Indexes for table `auth_groups_permissions`
 --
 ALTER TABLE `auth_groups_permissions`
   ADD KEY `auth_groups_permissions_permission_id_foreign` (`permission_id`),
   ADD KEY `group_id_permission_id` (`group_id`,`permission_id`);
 
 --
--- Indeks untuk tabel `auth_groups_users`
+-- Indexes for table `auth_groups_users`
 --
 ALTER TABLE `auth_groups_users`
   ADD KEY `auth_groups_users_user_id_foreign` (`user_id`),
   ADD KEY `group_id_user_id` (`group_id`,`user_id`);
 
 --
--- Indeks untuk tabel `auth_logins`
+-- Indexes for table `auth_logins`
 --
 ALTER TABLE `auth_logins`
   ADD PRIMARY KEY (`id`),
@@ -246,19 +276,19 @@ ALTER TABLE `auth_logins`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indeks untuk tabel `auth_permissions`
+-- Indexes for table `auth_permissions`
 --
 ALTER TABLE `auth_permissions`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `auth_reset_attempts`
+-- Indexes for table `auth_reset_attempts`
 --
 ALTER TABLE `auth_reset_attempts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `auth_tokens`
+-- Indexes for table `auth_tokens`
 --
 ALTER TABLE `auth_tokens`
   ADD PRIMARY KEY (`id`),
@@ -266,20 +296,26 @@ ALTER TABLE `auth_tokens`
   ADD KEY `selector` (`selector`);
 
 --
--- Indeks untuk tabel `auth_users_permissions`
+-- Indexes for table `auth_users_permissions`
 --
 ALTER TABLE `auth_users_permissions`
   ADD KEY `auth_users_permissions_permission_id_foreign` (`permission_id`),
   ADD KEY `user_id_permission_id` (`user_id`,`permission_id`);
 
 --
--- Indeks untuk tabel `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `users`
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
@@ -287,87 +323,62 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `auth_activation_attempts`
+-- AUTO_INCREMENT for table `auth_activation_attempts`
 --
 ALTER TABLE `auth_activation_attempts`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `auth_groups`
+-- AUTO_INCREMENT for table `auth_groups`
 --
 ALTER TABLE `auth_groups`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `auth_logins`
+-- AUTO_INCREMENT for table `auth_logins`
 --
 ALTER TABLE `auth_logins`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `auth_permissions`
+-- AUTO_INCREMENT for table `auth_permissions`
 --
 ALTER TABLE `auth_permissions`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `auth_reset_attempts`
+-- AUTO_INCREMENT for table `auth_reset_attempts`
 --
 ALTER TABLE `auth_reset_attempts`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `auth_tokens`
+-- AUTO_INCREMENT for table `auth_tokens`
 --
 ALTER TABLE `auth_tokens`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `users`
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
---
-
---
--- Ketidakleluasaan untuk tabel `auth_groups_permissions`
---
-ALTER TABLE `auth_groups_permissions`
-  ADD CONSTRAINT `auth_groups_permissions_group_id_foreign` FOREIGN KEY (`group_id`) REFERENCES `auth_groups` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `auth_groups_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `auth_permissions` (`id`) ON DELETE CASCADE;
-
---
--- Ketidakleluasaan untuk tabel `auth_groups_users`
---
-ALTER TABLE `auth_groups_users`
-  ADD CONSTRAINT `auth_groups_users_group_id_foreign` FOREIGN KEY (`group_id`) REFERENCES `auth_groups` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `auth_groups_users_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
-
---
--- Ketidakleluasaan untuk tabel `auth_tokens`
---
-ALTER TABLE `auth_tokens`
-  ADD CONSTRAINT `auth_tokens_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
-
---
--- Ketidakleluasaan untuk tabel `auth_users_permissions`
---
-ALTER TABLE `auth_users_permissions`
-  ADD CONSTRAINT `auth_users_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `auth_permissions` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `auth_users_permissions_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
