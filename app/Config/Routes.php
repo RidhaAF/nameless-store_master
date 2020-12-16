@@ -32,6 +32,9 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get('/admin', 'Admin::index');
+$routes->get('/admin/tambah-product', 'Admin::addProduct');
+$routes->get('/admin/customers', 'Admin::users');
 
 /**
  * --------------------------------------------------------------------

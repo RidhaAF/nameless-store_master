@@ -91,6 +91,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-3">
+                <i class="bi bi-shield-check"></i>
                 <h5>Garansi Resmi</h5>
                 <p>Produk Bergaransi Resmi</p>
             </div>
