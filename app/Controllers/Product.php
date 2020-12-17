@@ -35,4 +35,18 @@ class Product extends BaseController
         // cara connect db dengan model
         return view('product/index', $data);
     }
+
+    public function detail($slug)
+    {
+        $data = [
+            'product' => $this->productModel->getProduct($slug)
+        ];
+
+        // jika produk tidak ada di tabel
+        if (empty($data['product'])) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Produk ' . $slug . ' tidak ditemukan.');
+        }
+
+        return view('product/detail', $data);
+    }
 }
