@@ -11,6 +11,7 @@
 
     <!-- My CSS -->
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" type="image/jpg" href="/favicon.png" />
 
     <title>Nameless Store</title>
 </head>
