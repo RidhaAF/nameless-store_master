@@ -109,6 +109,22 @@ class Admin extends BaseController
 
         return view('admin/product/editProduct', $data);
     }
+    
+    public function delete($id)
+    {
+        //cari berdasarkan id
+        $product = $this->productModel->find($id);
+
+        //cek jika file gambarnya default
+        if ($product['image'] != 'sampul_default.jpg') {
+            //hapus gambar
+            unlink('img/' . $product['image']);
+        }
+
+        $this->productModel->delete($id);
+        session()->setFlashdata('pesan', 'Produk berhasil dihapus');
+        return redirect()->to('/admin');
+    }
 
     public function update($id)
     {
