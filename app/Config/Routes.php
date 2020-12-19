@@ -35,6 +35,7 @@ $routes->get('/', 'Pages::index');
 
 $routes->get('/admin', 'Admin::index');
 $routes->get('/admin/tambah-product', 'Admin::addProduct');
+$routes->delete('/admin/(:num)', 'Admin::delete/$1');
 $routes->get('/admin/edit-product/(:segment)', 'Admin::edit/$1');
 $routes->get('/admin/customers', 'Admin::users');
 $routes->get('/product/(:any)', 'Product::detail/$1');
