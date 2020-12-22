@@ -22,13 +22,13 @@ class Product extends BaseController
         if ($keyword) {
             $product = $this->productModel->search($keyword);
         } else {
-            $product = $this->productModel;
+            $product = $this->productModel->join('brand', 'brand.id_brand=product.id_brand');
         }
 
         $data = [
             // 'product' => $this->productModel->findAll(),
             'product' => $product->paginate(10, 'product'),
-            'pager' => $this->productModel->pager,
+            'pager' => $this->productModel->join('brand', 'brand.id_brand=product.id_brand')->pager,
             'currentPage' => $currentPage
         ];
 

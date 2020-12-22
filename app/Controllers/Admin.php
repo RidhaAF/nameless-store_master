@@ -2,15 +2,18 @@
 
 namespace App\Controllers;
 
+use App\Models\BrandModel;
 use App\Models\ProductModel;
 
 class Admin extends BaseController
 {
     protected $productModel;
+    protected $brandModel;
 
     public function __construct()
     {
         $this->productModel = new ProductModel();
+        $this->brandModel = new BrandModel();
     }
 
     public function index()
@@ -21,13 +24,13 @@ class Admin extends BaseController
         if ($keyword) {
             $product = $this->productModel->search($keyword);
         } else {
-            $product = $this->productModel;
+            $product = $this->productModel->join('brand', 'brand.id_brand=product.id_brand');
         }
 
         $data = [
             // 'product' => $this->productModel->findAll(),
             'product' => $product->paginate(10, 'product'),
-            'pager' => $this->productModel->pager,
+            'pager' => $this->productModel->join('brand', 'brand.id_brand=product.id_brand')->pager,
             'currentPage' => $currentPage
         ];
 
@@ -39,6 +42,7 @@ class Admin extends BaseController
     {
         // session();
         $data = [
+            'brand' => $this->brandModel->findAll(),
             'validation' => \Config\Services::validation()
         ];
 
@@ -65,9 +69,9 @@ class Admin extends BaseController
                 ]
             ]
         ])) {
-            // $validation = \Config\Services::validation();
+            $validation = \Config\Services::validation();
             // return redirect()->to('/komik/create')->withInput()->with('validation', $validation);
-            return redirect()->to('/admin/product/addProduct')->withInput();
+            return redirect()->to('/admin/product/addProduct')->withInput()->with('validation', $validation);
         }
 
         // ambil gambar
@@ -84,7 +88,7 @@ class Admin extends BaseController
 
         $slug = url_title($this->request->getVar('type'), '-', true);
         $this->productModel->save([
-            'brand' => $this->request->getVar('brand'),
+            'id_brand' => $this->request->getVar('id_brand'),
             'type' => $this->request->getVar('type'),
             'slug' => $slug,
             'price' => $this->request->getVar('price'),
@@ -104,12 +108,13 @@ class Admin extends BaseController
     {
         $data = [
             'validation' => \Config\Services::validation(),
+            'brand' => $this->brandModel->findAll(),
             'product' => $this->productModel->getProduct($slug)
         ];
 
         return view('admin/product/editProduct', $data);
     }
-    
+
     public function delete($id)
     {
         //cari berdasarkan id
@@ -151,9 +156,16 @@ class Admin extends BaseController
                     'is_image' => 'Yang anda pilih bukan gambar',
                     'mime_in' => 'Yang anda pilih bukan gambar'
                 ]
+            ],
+            'id_brand' => [
+                'rules' => 'numeric',
+                'errors' => [
+                    'numeric' => '{field} pilih kembali brand product ini.'
+                ]
             ]
         ])) {
-            return redirect()->to('/admin/product/editProduct/' . $this->request->getVar('slug'))->withInput();
+            $validation = \Config\Services::validation();
+            return redirect()->to('/admin/edit-product/' . $this->request->getVar('slug'))->withInput()->with('validation', $validation);
         }
 
         $fileGambar = $this->request->getFile('image');
@@ -176,7 +188,7 @@ class Admin extends BaseController
         $slug = url_title($this->request->getVar('type'), '-', true);
         $this->productModel->save([
             'id' => $id,
-            'brand' => $this->request->getVar('brand'),
+            'id_brand' => $this->request->getVar('id_brand'),
             'type' => $this->request->getVar('type'),
             'slug' => $slug,
             'price' => $this->request->getVar('price'),
@@ -200,5 +212,15 @@ class Admin extends BaseController
 
         // cara connect db dengan model
         return view('admin/users/users', $data);
+    }
+
+    public function brand()
+    {
+        $data = [
+            'brand' => $this->brandModel->findAll(),
+        ];
+
+        // cara connect db dengan model
+        return view('admin/brand/brand', $data);
     }
 }

@@ -13,13 +13,20 @@
                 <div class="form-group row">
                     <label for="brand" class="col-sm-2 col-form-label">Brand</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="brand" name="brand" value="<?= old('brand'); ?>" placeholder="Samsung">
+                        <select class="form-control" id="brand" name="id_brand" aria-label="Default select example">
+                            <option selected>
+                                <-- Pilih Brand -->
+                            </option>
+                            <?php foreach ($brand as $b) : ?>
+                                <option value="<?= $b['id_brand']; ?>"><?= $b['nama_brand']; ?></option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="type" class="col-sm-2 col-form-label">Tipe</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('type')) ? 'is-invalid' : ''; ?>" id="type" name="type" value="<?= old('type'); ?>" placeholder="iPhone 12 Pro">
+                        <input type="text" class="form-control <?= ($validation->hasError('type')) ? 'is-invalid' : ''; ?>" id="type" name="type" placeholder="iPhone 12 Pro">
                         <div id="invalidCheck3Feedback" class="invalid-feedback">
                             <?= $validation->getError('type'); ?>
                         </div>
@@ -28,31 +35,31 @@
                 <div class="form-group row">
                     <label for="price" class="col-sm-2 col-form-label">Harga</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="price" name="price" value="<?= old('price'); ?>" placeholder="15000000">
+                        <input type="text" class="form-control" id="price" name="price" placeholder="15000000">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="os" class="col-sm-2 col-form-label">OS</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="os" name="os" value="<?= old('os'); ?>" placeholder="Android 11">
+                        <input type="text" class="form-control" id="os" name="os" placeholder="Android 11">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="storage" class="col-sm-2 col-form-label">Storage</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="storage" name="storage" value="<?= old('storage'); ?>" placeholder="256GB">
+                        <input type="text" class="form-control" id="storage" name="storage" placeholder="256GB">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="cpu" class="col-sm-2 col-form-label">CPU</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="cpu" name="cpu" value="<?= old('cpu'); ?>" placeholder="Snapdragon 865">
+                        <input type="text" class="form-control" id="cpu" name="cpu" placeholder="Snapdragon 865">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="ram" class="col-sm-2 col-form-label">RAM</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="ram" name="ram" value="<?= old('ram'); ?>" placeholder="12GB">
+                        <input type="text" class="form-control" id="ram" name="ram" placeholder="12GB">
                     </div>
                 </div>
                 <div class="form-group row">

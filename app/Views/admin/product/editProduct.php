@@ -15,7 +15,17 @@
                 <div class="form-group row">
                     <label for="brand" class="col-sm-2 col-form-label">Brand</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="brand" name="brand" value="<?= (old('brand')) ? old('brand') : $product['brand'] ?>" placeholder="Samsung">
+                        <select class="form-control <?= ($validation->hasError('id_brand')) ? 'is-invalid' : ''; ?> is-invalid" id="brand" name="id_brand" aria-label="Default select example">
+                            <option selected value="first">
+                                <-- Pilih Brand -->
+                            </option>
+                            <?php foreach ($brand as $b) : ?>
+                                <option value="<?= $b['id_brand']; ?>"><?= $b['nama_brand']; ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                        <div class="invalid-feedback">sfsfsfsfsfasdasdasdasdasdasdasd
+                            <?= $validation->getError('id_brand'); ?>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group row">

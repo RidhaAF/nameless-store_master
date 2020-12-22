@@ -13,7 +13,7 @@
         <div class="col-md-5 mt-5">
             <ul class="list-group">
                 <li class="list-group-item">
-                    <h3><?= $product['brand']; ?> <?= $product['type']; ?></h3>
+                    <h3><?= $product['nama_brand']; ?> <?= $product['type']; ?></h3>
                 </li>
                 <li class="list-group-item">Harga : <?= $product['price']; ?></li>
                 <li class="list-group-item">Operating System : <?= $product['os']; ?></li>

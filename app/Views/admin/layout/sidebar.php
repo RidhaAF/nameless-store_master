@@ -25,13 +25,13 @@
           Customers
         </a>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="#">
+      <li class="nav-item">
+        <a class="nav-link" href="/admin/brand">
           <span data-feather="bar-chart-2"></span>
-          Reports
+          Brand
         </a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="#">
           <span data-feather="layers"></span>
           Integrations

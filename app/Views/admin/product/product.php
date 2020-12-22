@@ -46,7 +46,7 @@
                 <?php foreach ($product as $p) : ?>
                     <tr>
                         <td><img src="/img/<?= $p['image']; ?>" class="gambar" width="100"></td>
-                        <td><?= $p['brand']; ?> <?= $p['type']; ?></td>
+                        <td><?= $p['nama_brand']; ?> <?= $p['type']; ?></td>
                         <td>Rp. <?= $p['price']; ?>,-</td>
                         <td>
                             <span>

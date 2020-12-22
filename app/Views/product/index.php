@@ -26,7 +26,7 @@
                 <div class="card" style="width: 16rem;">
                     <img src="/img/<?= $p['image']; ?>" class="card-img-top">
                     <div class="card-body">
-                        <h6 class="card-title"><?= $p['brand']; ?> <?= $p['type']; ?></h6>
+                        <h6 class="card-title"><?= $p['nama_brand']; ?> <?= $p['type']; ?></h6>
                         <p class="card-text">Rp. <?= $p['price']; ?>,-</p>
                         <p><a href="product/<?= $p['slug']; ?>">Spesifikasi Lengkap</a></p>
                         <a href="#" class="btn btn-primary">Beli Sekarang</a>
@@ -37,45 +37,5 @@
     </div>
 </div>
 <!-- End Card -->
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Spesifikasi</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="/img/<?= $p['image']; ?>" class="img-fluid">
-                        </div>
-
-                        <div class="col-md-8">
-                            <ul class="list-group">
-                                <li class="list-group-item">
-                                    <h3><?= $p['brand']; ?> <?= $p['type']; ?></h3>
-                                </li>
-                                <li class="list-group-item">Harga : <?= $p['price']; ?></li>
-                                <li class="list-group-item">Operating System : <?= $p['os']; ?></li>
-                                <li class="list-group-item">CPU : <?= $p['cpu']; ?></li>
-                                <li class="list-group-item">RAM : <?= $p['ram']; ?></li>
-                                <li class="list-group-item">Storage : <?= $p['storage']; ?></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <a href="#" class="btn btn-primary">Beli</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Modal -->
 
 <?= $this->endSection(); ?>
