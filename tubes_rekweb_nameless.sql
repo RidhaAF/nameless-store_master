@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2020 at 06:04 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- Waktu pembuatan: 22 Des 2020 pada 12.32
+-- Versi server: 10.4.14-MariaDB
+-- Versi PHP: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auth_activation_attempts`
+-- Struktur dari tabel `auth_activation_attempts`
 --
 
 CREATE TABLE `auth_activation_attempts` (
@@ -36,19 +36,18 @@ CREATE TABLE `auth_activation_attempts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `auth_activation_attempts`
+-- Dumping data untuk tabel `auth_activation_attempts`
 --
 
 INSERT INTO `auth_activation_attempts` (`id`, `ip_address`, `user_agent`, `token`, `created_at`) VALUES
 (1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36', '74cd66e2b8f2a5b84de08eadd5e1b7b1', '2020-12-11 02:36:34'),
 (2, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36', '74cd66e2b8f2a5b84de08eadd5e1b7b1', '2020-12-11 02:43:41'),
-(3, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36', '223da30722817f00ca2c0fe56424a8e6', '2020-12-11 02:44:49'),
-(4, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36', '5947375b2e0448f508a0307fb250beaa', '2020-12-13 23:22:33');
+(3, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36', '223da30722817f00ca2c0fe56424a8e6', '2020-12-11 02:44:49');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auth_groups`
+-- Struktur dari tabel `auth_groups`
 --
 
 CREATE TABLE `auth_groups` (
@@ -60,7 +59,7 @@ CREATE TABLE `auth_groups` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auth_groups_permissions`
+-- Struktur dari tabel `auth_groups_permissions`
 --
 
 CREATE TABLE `auth_groups_permissions` (
@@ -71,7 +70,7 @@ CREATE TABLE `auth_groups_permissions` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auth_groups_users`
+-- Struktur dari tabel `auth_groups_users`
 --
 
 CREATE TABLE `auth_groups_users` (
@@ -82,7 +81,7 @@ CREATE TABLE `auth_groups_users` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auth_logins`
+-- Struktur dari tabel `auth_logins`
 --
 
 CREATE TABLE `auth_logins` (
@@ -95,32 +94,17 @@ CREATE TABLE `auth_logins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `auth_logins`
+-- Dumping data untuk tabel `auth_logins`
 --
 
 INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `success`) VALUES
 (1, '::1', 'asdaw112233', 2, '2020-12-11 02:43:59', 0),
-(2, '::1', 'adiefeskhart369@gmail.com', 2, '2020-12-11 02:44:58', 1),
-(3, '::1', 'yupy11223344@gmail.com', NULL, '2020-12-13 23:11:01', 0),
-(4, '::1', 'ridha10af@gmail.com', 4, '2020-12-13 23:22:17', 0),
-(5, '::1', 'ridhaaf@gmail.com', 3, '2020-12-13 23:22:41', 0),
-(6, '::1', 'ridha10af@gmail.com', 4, '2020-12-13 23:22:54', 1),
-(7, '::1', 'ridha10af@gmail.com', 4, '2020-12-13 23:24:18', 1),
-(8, '::1', 'ridha10af@gmail.com', 4, '2020-12-13 23:24:45', 1),
-(9, '::1', 'ridha10af@gmail.com', 4, '2020-12-13 23:25:43', 1),
-(10, '::1', 'ridha10af@gmail.com', 4, '2020-12-14 00:08:31', 1),
-(11, '::1', 'ridha10af@gmail.com', 4, '2020-12-14 00:31:50', 1),
-(12, '::1', 'ridha10af@gmail.com', 4, '2020-12-14 05:06:44', 1),
-(13, '::1', 'ridha10af@gmail.com', 4, '2020-12-14 07:44:29', 1),
-(14, '::1', 'ridha10af@gmail.com', 4, '2020-12-15 00:06:57', 1),
-(15, '::1', 'ridha10af@gmail.com', 4, '2020-12-16 20:39:06', 1),
-(16, '::1', 'ridha10af@gmail.com', 4, '2020-12-16 22:23:55', 1),
-(17, '::1', 'ridha10af@gmail.com', 4, '2020-12-16 22:25:34', 1);
+(2, '::1', 'adiefeskhart369@gmail.com', 2, '2020-12-11 02:44:58', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auth_permissions`
+-- Struktur dari tabel `auth_permissions`
 --
 
 CREATE TABLE `auth_permissions` (
@@ -132,7 +116,7 @@ CREATE TABLE `auth_permissions` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auth_reset_attempts`
+-- Struktur dari tabel `auth_reset_attempts`
 --
 
 CREATE TABLE `auth_reset_attempts` (
@@ -147,7 +131,7 @@ CREATE TABLE `auth_reset_attempts` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auth_tokens`
+-- Struktur dari tabel `auth_tokens`
 --
 
 CREATE TABLE `auth_tokens` (
@@ -161,7 +145,7 @@ CREATE TABLE `auth_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auth_users_permissions`
+-- Struktur dari tabel `auth_users_permissions`
 --
 
 CREATE TABLE `auth_users_permissions` (
@@ -172,7 +156,28 @@ CREATE TABLE `auth_users_permissions` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Struktur dari tabel `brand`
+--
+
+CREATE TABLE `brand` (
+  `id_brand` int(11) NOT NULL,
+  `nama_brand` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `brand`
+--
+
+INSERT INTO `brand` (`id_brand`, `nama_brand`) VALUES
+(1, 'iPhone'),
+(2, 'Samsung'),
+(3, 'Xiaomi'),
+(4, 'Oppo');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -186,7 +191,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `migrations`
+-- Dumping data untuk tabel `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`, `batch`) VALUES
@@ -195,12 +200,11 @@ INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product`
+-- Struktur dari tabel `product`
 --
 
 CREATE TABLE `product` (
   `id` int(11) NOT NULL,
-  `brand` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL,
   `slug` varchar(255) NOT NULL,
   `price` int(50) NOT NULL,
@@ -208,26 +212,27 @@ CREATE TABLE `product` (
   `storage` varchar(255) NOT NULL,
   `cpu` varchar(255) NOT NULL,
   `ram` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL
+  `image` varchar(255) NOT NULL,
+  `id_brand` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `product`
+-- Dumping data untuk tabel `product`
 --
 
-INSERT INTO `product` (`id`, `brand`, `type`, `slug`, `price`, `os`, `storage`, `cpu`, `ram`, `image`) VALUES
-(1, 'Apple', 'iPhone 12 Mini', 'iphone-12-mini', 12999000, 'iOS 14', '64GB', 'Apple A14 Bionic', '4GB', 'iphone-12-mini.png'),
-(2, 'Samsung', 'Galaxy Z Fold2 5G', 'galaxy-z-fold2-5g', 31990000, 'Android 10', '256GB', 'Qualcomm SM8250 Snapdragon 865+', '12GB', 'fold-2.png'),
-(3, 'Xiaomi', 'Mi 10T Pro 5G', 'mi-10t-pro-5g', 8499000, 'Android 10', '128GB', 'Qualcomm SM8250 Snapdragon 865', '8GB', 'mi-10t-pro.png'),
-(4, 'Apple', 'iPhone 12 Pro', 'iphone-12-pro', 18499000, 'iOS 14', '128GB', 'Apple A14 Bionic', '6GB', 'iphone-12-pro.png'),
-(5, 'Oppo', 'Reno5 Pro 5G', 'reno5-pro', 8400000, 'Android 11', '128GB', 'Mediatek MT6889Z Dimensity 1000+', '8GB', 'reno5-pro.png'),
-(7, 'Samsung', 'Galaxy Z Flip 5G', 'galaxy-z-flip-5g', 11999000, 'Android 11', '256GB', 'Qualcomm SM8250 Snapdragon 865+', '8GB', '1607924162_32de55cb7a9eaced83af.png'),
-(8, 'Google', 'Pixel 4 XL', 'pixel-4-xl', 10000000, 'Android 10', '128GB', 'Qualcomm SM8150 Snapdragon 855', '6GB', '1608181184_8d3553a8ffb3763f818b.png');
+INSERT INTO `product` (`id`, `type`, `slug`, `price`, `os`, `storage`, `cpu`, `ram`, `image`, `id_brand`) VALUES
+(1, '12 Mini', '12-mini', 12999000, 'iOS 14', '62', 'Apple A14 Bionic', '4GB', 'iphone-12-mini.png', 1),
+(2, 'Galaxy Z Fold 2', 'galaxy-z-fold-2', 31990000, 'Android 10', '16', 'Qualcomm SM8250 Snapdragon 865+', '12GB', 'fold-2.png', 2),
+(3, 'Mi 10T Pro 5G', 'mi-10t-pro', 8499000, 'Android 10', '32', 'Qualcomm SM8250 Snapdragon 865', '8GB', 'mi-10t-pro.png', 3),
+(4, '12 Pro', '12-pro', 18499000, 'iOS 14', '44', 'Apple A14 Bionic', '6GB', 'iphone-12-pro.png', 1),
+(5, 'Reno5 Pro 5G', 'reno5-pro', 8400000, 'Android 11', '128', 'Mediatek MT6889Z Dimensity 1000+', '8GB', 'reno5-pro.png', 4),
+(6, 'Redmi 21 Pro Max', 'redmi-21-pro-max', 5000000, 'Android 15', '123', 'Mediatech 1000KGG20K', '500GB', 'fold-2.png', 3),
+(7, '11 Pro Max', '11-pro-max', 21000000, 'iOS 14', '256GB', ' Apple A14 Bionic', '12GB', '1608620776_9e647ab270e1e6102e42.png', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -249,45 +254,44 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `email`, `username`, `password_hash`, `reset_hash`, `reset_at`, `reset_expires`, `activate_hash`, `status`, `status_message`, `active`, `force_pass_reset`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(2, 'adiefeskhart369@gmail.com', 'asdaw112233', '$2y$10$j3VjGz9M.oE61TqKmyejyuGLSfIhTlQ34jrCQBwKTKBqA1TNi2fFC', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2020-12-11 02:42:45', '2020-12-11 02:44:50', NULL),
-(4, 'ridha10af@gmail.com', 'ridha10af', '$2y$10$.1uIAARb6J0vqcoVbni0/Oq/ebfFqP9SjRdXMfmCHMZPKp/6usJTC', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2020-12-13 23:20:33', '2020-12-13 23:22:33', NULL);
+(2, 'adiefeskhart369@gmail.com', 'asdaw112233', '$2y$10$j3VjGz9M.oE61TqKmyejyuGLSfIhTlQ34jrCQBwKTKBqA1TNi2fFC', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2020-12-11 02:42:45', '2020-12-11 02:44:50', NULL);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `auth_activation_attempts`
+-- Indeks untuk tabel `auth_activation_attempts`
 --
 ALTER TABLE `auth_activation_attempts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `auth_groups`
+-- Indeks untuk tabel `auth_groups`
 --
 ALTER TABLE `auth_groups`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `auth_groups_permissions`
+-- Indeks untuk tabel `auth_groups_permissions`
 --
 ALTER TABLE `auth_groups_permissions`
   ADD KEY `auth_groups_permissions_permission_id_foreign` (`permission_id`),
   ADD KEY `group_id_permission_id` (`group_id`,`permission_id`);
 
 --
--- Indexes for table `auth_groups_users`
+-- Indeks untuk tabel `auth_groups_users`
 --
 ALTER TABLE `auth_groups_users`
   ADD KEY `auth_groups_users_user_id_foreign` (`user_id`),
   ADD KEY `group_id_user_id` (`group_id`,`user_id`);
 
 --
--- Indexes for table `auth_logins`
+-- Indeks untuk tabel `auth_logins`
 --
 ALTER TABLE `auth_logins`
   ADD PRIMARY KEY (`id`),
@@ -295,19 +299,19 @@ ALTER TABLE `auth_logins`
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `auth_permissions`
+-- Indeks untuk tabel `auth_permissions`
 --
 ALTER TABLE `auth_permissions`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `auth_reset_attempts`
+-- Indeks untuk tabel `auth_reset_attempts`
 --
 ALTER TABLE `auth_reset_attempts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `auth_tokens`
+-- Indeks untuk tabel `auth_tokens`
 --
 ALTER TABLE `auth_tokens`
   ADD PRIMARY KEY (`id`),
@@ -315,26 +319,33 @@ ALTER TABLE `auth_tokens`
   ADD KEY `selector` (`selector`);
 
 --
--- Indexes for table `auth_users_permissions`
+-- Indeks untuk tabel `auth_users_permissions`
 --
 ALTER TABLE `auth_users_permissions`
   ADD KEY `auth_users_permissions_permission_id_foreign` (`permission_id`),
   ADD KEY `user_id_permission_id` (`user_id`,`permission_id`);
 
 --
--- Indexes for table `migrations`
+-- Indeks untuk tabel `brand`
+--
+ALTER TABLE `brand`
+  ADD PRIMARY KEY (`id_brand`);
+
+--
+-- Indeks untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `product`
+-- Indeks untuk tabel `product`
 --
 ALTER TABLE `product`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_brand` (`id_brand`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
@@ -342,62 +353,78 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `auth_activation_attempts`
+-- AUTO_INCREMENT untuk tabel `auth_activation_attempts`
 --
 ALTER TABLE `auth_activation_attempts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `auth_groups`
+-- AUTO_INCREMENT untuk tabel `auth_groups`
 --
 ALTER TABLE `auth_groups`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `auth_logins`
+-- AUTO_INCREMENT untuk tabel `auth_logins`
 --
 ALTER TABLE `auth_logins`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `auth_permissions`
+-- AUTO_INCREMENT untuk tabel `auth_permissions`
 --
 ALTER TABLE `auth_permissions`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `auth_reset_attempts`
+-- AUTO_INCREMENT untuk tabel `auth_reset_attempts`
 --
 ALTER TABLE `auth_reset_attempts`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `auth_tokens`
+-- AUTO_INCREMENT untuk tabel `auth_tokens`
 --
 ALTER TABLE `auth_tokens`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT untuk tabel `brand`
+--
+ALTER TABLE `brand`
+  MODIFY `id_brand` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `product`
+-- AUTO_INCREMENT untuk tabel `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `product`
+--
+ALTER TABLE `product`
+  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`id_brand`) REFERENCES `brand` (`id_brand`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
