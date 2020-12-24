@@ -28,8 +28,8 @@
                     <div class="card-body">
                         <h6 class="card-title"><?= $p['nama_brand']; ?> <?= $p['type']; ?></h6>
                         <p class="card-text">Rp. <?= $p['price']; ?>,-</p>
-                        <p><a href="product/<?= $p['slug']; ?>">Spesifikasi Lengkap</a></p>
-                        <a href="#" class="btn btn-primary">Beli Sekarang</a>
+                        <p><a href="/product/<?= $p['slug']; ?>">Spesifikasi Lengkap</a></p>
+                        <a href="/transaction/<?= $p['slug']; ?>" class="btn btn-primary">Beli Sekarang</a>
                     </div>
                 </div>
             </div>

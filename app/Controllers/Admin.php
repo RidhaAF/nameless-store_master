@@ -70,8 +70,7 @@ class Admin extends BaseController
             ]
         ])) {
             $validation = \Config\Services::validation();
-            // return redirect()->to('/komik/create')->withInput()->with('validation', $validation);
-            return redirect()->to('/admin/product/addProduct')->withInput()->with('validation', $validation);
+            return redirect()->to('/admin/addProduct')->withInput()->with('validation', $validation);
         }
 
         // ambil gambar
@@ -207,7 +206,7 @@ class Admin extends BaseController
     public function users()
     {
         $data = [
-            'product' => $this->productModel->findAll(),
+            'product' => $this->productModel->findAll()
         ];
 
         // cara connect db dengan model
@@ -217,7 +216,7 @@ class Admin extends BaseController
     public function brand()
     {
         $data = [
-            'brand' => $this->brandModel->findAll(),
+            'brand' => $this->brandModel->findAll()
         ];
 
         // cara connect db dengan model

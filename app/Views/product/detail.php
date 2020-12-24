@@ -21,7 +21,7 @@
                 <li class="list-group-item">RAM : <?= $product['ram']; ?></li>
                 <li class="list-group-item">Storage : <?= $product['storage']; ?></li>
                 <hr>
-                <a href="#" class="btn btn-dark">Beli</a>
+                <a href="/transaction/<?= $product['slug']; ?>" class="btn btn-dark">Beli</a>
             </ul>
         </div>
     </div>
