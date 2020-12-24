@@ -2,41 +2,37 @@
 
 namespace App\Controllers;
 
+use App\Models\BrandModel;
+use App\Models\ProductModel;
+
 class Pages extends BaseController
 {
-  public function index()
-  {
-    $data = [
-      'title' => "Novaldy Home Page"
-    ];
-    return view('pages/home', $data);
-  }
-  public function about($nama = 'Mochamad Novaldy', $umur = 20)
-  {
-    $data = [
-      'title' => "About Me",
-      'nama' => $nama,
-      'umur' => $umur
-    ];
-    return view('pages/about', $data);
-  }
-  public function contact()
-  {
-    $data = [
-      'title' => "Contact Us",
-      'alamat' => [
-        [
-          'tipe' => '08889398304',
-          'alamat' => 'Kp.Babakansoka Rt 01/06',
-          'kota' => 'Cianjur'
-        ],
-        [
-          'tipe' => 'Universitas Pasundan',
-          'alamat' => 'Jl. Dr Setiabudi No.193',
-          'kota' => 'Bandung'
-        ]
-      ]
-    ];
-    return view('pages/contact', $data);
-  }
+    protected $brandModel;
+    protected $productModel;
+
+    public function __construct()
+    {
+        $this->brandModel = new BrandModel();
+        $this->productModel = new ProductModel();
+    }
+
+    public function index()
+    {
+        $currentPage = $this->request->getVar('page_product') ? $this->request->getVar('page_product') : 1;
+
+        $keyword = $this->request->getVar('keyword');
+        if ($keyword) {
+            $product = $this->productModel->search($keyword);
+        } else {
+            $product = $this->productModel->join('brand', 'brand.id_brand=product.id_brand');
+        }
+
+        $data = [
+            'product' => $product->paginate(3, 'product'),
+            'pager' => $this->productModel->join('brand', 'brand.id_brand=product.id_brand')->pager,
+            'currentPage' => $currentPage
+        ];
+
+        return view('pages/home', $data);
+    }
 }

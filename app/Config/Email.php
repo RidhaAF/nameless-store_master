@@ -62,7 +62,7 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $SMTPPass = 'WebNovaldy';
+	public $SMTPPass = 'Nameless Store';
 
 	/**
 	 * SMTP Port

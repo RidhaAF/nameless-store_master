@@ -23,7 +23,7 @@
                                 <option value="<?= $b['id_brand']; ?>"><?= $b['nama_brand']; ?></option>
                             <?php endforeach; ?>
                         </select>
-                        <div class="invalid-feedback">sfsfsfsfsfasdasdasdasdasdasdasd
+                        <div class="invalid-feedback">Pilih Brand!
                             <?= $validation->getError('id_brand'); ?>
                         </div>
                     </div>

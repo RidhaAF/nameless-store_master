@@ -31,11 +31,16 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-// $routes->get('/', 'Home::index');
 $routes->get('/', 'Pages::index');
-$routes->get('/komik/create', 'Komik::create');
-$routes->delete('/komik/(:num)', 'Komik::delete/$1');
-$routes->get('/komik/(:segment)', 'Komik::detail/$1');
+
+$routes->get('/admin', 'Admin::index');
+$routes->get('/admin/tambah-product', 'Admin::addProduct');
+$routes->delete('/admin/(:num)', 'Admin::delete/$1');
+$routes->get('/admin/edit-product/(:segment)', 'Admin::edit/$1');
+$routes->get('/admin/customers', 'Admin::users');
+$routes->get('/admin/brand', 'Admin::brand');
+$routes->get('/product/(:any)', 'Product::detail/$1');
+$routes->get('/transaction/(:any)', 'Transaction::index/$1');
 
 /**
  * --------------------------------------------------------------------
