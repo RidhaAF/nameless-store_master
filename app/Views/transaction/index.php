@@ -55,7 +55,8 @@
                     <div class="col-md-6 mb-3">
                         <label for="tujuan">Kota Tujuan</label>
                         <select class="custom-select d-block w-100" id="kota_tujuan" name="kota_tujuan" required>
-                            <option>Pilih Kota</option>
+                            <option>Bandung</option>
+                            <option>Jakarta</option>
                         </select>
                     </div>
                     <div class="col-md-6 mb-3">
