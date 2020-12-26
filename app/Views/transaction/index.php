@@ -32,43 +32,9 @@
             </ul>
         </div>
 
-        <!-- <form action="/transaction/saveTransaction" method="POST" enctype="multipart/form-data">
-            
-            <div class="form-group">
-                <label for="namaLengkap">Nama Lengkap</label>
-                <input type="name" class="form-control" id="namaLengkap" name="namaLengkap" placeholder="Andi Nugraha" required>
-                <div class="invalid-feedback">
-                    Masukkan nama lengkap.
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="namaLengkap">Alamat</label>
-                <input type="address" class="form-control" id="alamat" name="alamat" placeholder="Jl. Melati No.123" required>
-                <div class="invalid-feedback">
-                    Masukkan alamat pengiriman.
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="tujuan">Kota Tujuan</label>
-                <select class="form-control" id="tujuan" name="kota_tujuan" required>
-                    <option>Bandung</option>
-                    <option>Jakarta</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="kurir">Kurir</label>
-                <select class="form-control" id="kurir" name="kurir" required>
-                    <option value="jne">JNE</option>
-                    <option value="tiki">TIKI</option>
-                    <option value="pos">POS INDONESIA</option>>
-                </select>
-            </div>
-        </form> -->
-
         <div class="col-md-8 order-md-1">
             <h4 class="mb-3">Alamat Pengiriman</h4>
             <form action="/transaction/saveTransaction" method="POST" enctype="multipart/form-data" id="ongkir">
-                <?= csrf_field(); ?>
                 <div class="mb-3">
                     <label for="fullName">Nama Lengkap</label>
                     <input type="name" class="form-control" id="fullName" name="nama_lengkap" placeholder="Andi Nugraha" value="" required>
@@ -89,16 +55,15 @@
                     <div class="col-md-6 mb-3">
                         <label for="tujuan">Kota Tujuan</label>
                         <select class="custom-select d-block w-100" id="kota_tujuan" name="kota_tujuan" required>
-                            <option>Bandung</option>
-                            <option>Jakarta</option>
+                            <option>Pilih Kota</option>
                         </select>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="kurir">Kurir</label>
                         <select class="custom-select d-block w-100" id="kurir" name="kurir" required>
-                            <option value="jne">JNE</option>
-                            <option value="tiki">TIKI</option>
-                            <option value="pos">POS INDONESIA</option>
+                            <option value="JNE">JNE</option>
+                            <option value="TIKI">TIKI</option>
+                            <option value="POS INDONESIA">POS Indonesia</option>
                         </select>
                     </div>
                 </div>
@@ -109,23 +74,23 @@
 
                 <div class="d-block my-3">
                     <div class="custom-control custom-radio">
-                        <input id="bank" name="pembayaran" type="radio" value="transfer_bank" class="custom-control-input" checked required>
+                        <input id="bank" name="pembayaran" type="radio" value="Transfer Bank" class="custom-control-input" checked required>
                         <label class="custom-control-label" for="bank">Transfer Bank</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input id="kredit" name="pembayaran" type="radio" value="kartu_kredit" class="custom-control-input" required>
+                        <input id="kredit" name="pembayaran" type="radio" value="Kartu Kredit" class="custom-control-input" required>
                         <label class="custom-control-label" for="kredit">Kartu Kredit</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input id="indomaret" name="pembayaran" type="radio" value="indomaret" class="custom-control-input" required>
+                        <input id="indomaret" name="pembayaran" type="radio" value="Indomaret" class="custom-control-input" required>
                         <label class="custom-control-label" for="indomaret">Indomaret</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input id="alfamart" name="pembayaran" type="radio" value="alfamart" class="custom-control-input" required>
+                        <input id="alfamart" name="pembayaran" type="radio" value="Alfamart" class="custom-control-input" required>
                         <label class="custom-control-label" for="alfamart">Alfamart</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input id="ovo" name="pembayaran" type="radio" value="ovo" class="custom-control-input" required>
+                        <input id="ovo" name="pembayaran" type="radio" value="OVO" class="custom-control-input" required>
                         <label class="custom-control-label" for="ovo">OVO</label>
                     </div>
                 </div>

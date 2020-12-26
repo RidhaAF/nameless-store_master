@@ -4,16 +4,22 @@ namespace App\Controllers;
 
 use App\Models\BrandModel;
 use App\Models\ProductModel;
+use App\Models\TransactionModel;
+use \Myth\Auth\Models\UserModel;
 
 class Admin extends BaseController
 {
     protected $productModel;
     protected $brandModel;
+    protected $transactionModel;
+    protected $userModel;
 
     public function __construct()
     {
         $this->productModel = new ProductModel();
         $this->brandModel = new BrandModel();
+        $this->transactionModel = new TransactionModel();
+        $this->userModel = new UserModel();
     }
 
     public function index()
@@ -205,9 +211,19 @@ class Admin extends BaseController
 
     public function users()
     {
-        $data = [
-            'product' => $this->productModel->findAll()
-        ];
+
+        $db      = \Config\Database::connect();
+        $builder = $db->table('users');
+        $builder->select('users.id as userid, username, email, name');
+        $builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
+        $builder->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id');
+        $query = $builder->get();
+
+        // $data = [
+        //     'users' => $this->userModel->findAll()
+        // ];
+
+        $data['users'] = $query->getResult();
 
         // cara connect db dengan model
         return view('admin/users/users', $data);
@@ -221,5 +237,15 @@ class Admin extends BaseController
 
         // cara connect db dengan model
         return view('admin/brand/brand', $data);
+    }
+
+    public function order()
+    {
+        $data = [
+            'transaction' => $this->transactionModel->findAll()
+        ];
+
+        // cara connect db dengan model
+        return view('admin/order/order', $data);
     }
 }

@@ -9,7 +9,7 @@
             <a class="nav-link" href="/">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="product">Produk</a>
+            <a class="nav-link" href="/product">Produk</a>
         </li>
     </ul>
     <div class="navbar-nav mr-3">
@@ -33,21 +33,21 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/admin/order">
                     <span data-feather="file"></span>
                     Orders
                 </a>
             </li>
-            <!-- <li class="nav-item">
-            <a class="nav-link" href="/admin">
-              <span data-feather="shopping-cart"></span>
-              Products
-            </a>
-          </li> -->
             <li class="nav-item">
                 <a class="nav-link" href="/admin/customers">
                     <span data-feather="users"></span>
                     Customers
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/brand">
+                    <span data-feather="bar-chart-2"></span>
+                    Brand
                 </a>
             </li>
         </ul>

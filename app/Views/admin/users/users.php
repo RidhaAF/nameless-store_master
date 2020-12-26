@@ -2,13 +2,12 @@
 
 <?= $this->section('content-admin'); ?>
 
-<!-- Start Card -->
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-5">
             <form action="" method="POST">
-                <div class="input-group mt-5">
-                    <input type="text" class="form-control" placeholder="Cari product.." name="keyword">
+                <div class="input-group mt-4">
+                    <input type="text" class="form-control" placeholder="Cari.." name="keyword">
                     <div class="input-group-append">
                         <button class="btn btn-dark" type="submit" name="submit"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
@@ -20,25 +19,25 @@
         </div>
     </div>
 
-    <div class="row mt-2 justify-content-center">
+    <div class="row mt-4 justify-content-center">
         <table class="table table-hover table-bordered">
             <tr class="table-active">
                 <th>No.</th>
-                <th>Nama</th>
                 <th>Email</th>
-                <th>Handphone</th>
+                <th>Username</th>
+                <th>Role</th>
             </tr>
-            <?php foreach ($product as $p) : ?>
+            <?php $i = 1 ?>
+            <?php foreach ($users as $user) : ?>
                 <tr>
-                    <td>1</td>
-                    <td>Diki Fauzi</td>
-                    <td>email@gmail.com</td>
-                    <td>081231223444</td>
+                    <th><?= $i++; ?></th>
+                    <td><?= $user->email; ?></td>
+                    <td><?= $user->username; ?></td>
+                    <td><?= $user->name; ?></td>
                 </tr>
             <?php endforeach; ?>
         </table>
     </div>
 </div>
-<!-- End Card -->
 
 <?= $this->endSection(); ?>

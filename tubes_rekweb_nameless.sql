@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2020 at 03:47 PM
+-- Generation Time: Dec 26, 2020 at 07:59 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -35,15 +35,6 @@ CREATE TABLE `auth_activation_attempts` (
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `auth_activation_attempts`
---
-
-INSERT INTO `auth_activation_attempts` (`id`, `ip_address`, `user_agent`, `token`, `created_at`) VALUES
-(1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36', '74cd66e2b8f2a5b84de08eadd5e1b7b1', '2020-12-11 02:36:34'),
-(2, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36', '74cd66e2b8f2a5b84de08eadd5e1b7b1', '2020-12-11 02:43:41'),
-(3, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36', '223da30722817f00ca2c0fe56424a8e6', '2020-12-11 02:44:49');
-
 -- --------------------------------------------------------
 
 --
@@ -56,6 +47,14 @@ CREATE TABLE `auth_groups` (
   `description` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `auth_groups`
+--
+
+INSERT INTO `auth_groups` (`id`, `name`, `description`) VALUES
+(1, 'admin', 'Site Administrator'),
+(2, 'user', 'Regular User');
+
 -- --------------------------------------------------------
 
 --
@@ -67,6 +66,14 @@ CREATE TABLE `auth_groups_permissions` (
   `permission_id` int(11) UNSIGNED NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `auth_groups_permissions`
+--
+
+INSERT INTO `auth_groups_permissions` (`group_id`, `permission_id`) VALUES
+(1, 1),
+(2, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -77,6 +84,15 @@ CREATE TABLE `auth_groups_users` (
   `group_id` int(11) UNSIGNED NOT NULL DEFAULT 0,
   `user_id` int(11) UNSIGNED NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `auth_groups_users`
+--
+
+INSERT INTO `auth_groups_users` (`group_id`, `user_id`) VALUES
+(1, 1),
+(2, 2),
+(2, 3);
 
 -- --------------------------------------------------------
 
@@ -98,14 +114,18 @@ CREATE TABLE `auth_logins` (
 --
 
 INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `success`) VALUES
-(1, '::1', 'asdaw112233', 2, '2020-12-11 02:43:59', 0),
-(2, '::1', 'adiefeskhart369@gmail.com', 2, '2020-12-11 02:44:58', 1),
-(3, '::1', 'admin', NULL, '2020-12-24 07:01:13', 0),
-(4, '::1', 'ridhaaf@gmail.com', 3, '2020-12-24 07:03:24', 1),
-(5, '::1', 'ridhaaf@gmail.com', 3, '2020-12-24 07:06:49', 1),
-(6, '::1', 'ridhaaf@gmail.com', 3, '2020-12-24 07:07:32', 1),
-(7, '::1', 'ridhaaf@gmail.com', 3, '2020-12-24 07:07:53', 1),
-(8, '::1', 'ridhaaf@gmail.com', 3, '2020-12-24 07:37:53', 1);
+(1, '::1', 'admin', NULL, '2020-12-25 23:18:09', 0),
+(2, '::1', 'user', NULL, '2020-12-25 23:18:35', 0),
+(3, '::1', 'admin', NULL, '2020-12-25 23:20:30', 0),
+(4, '::1', 'user123', NULL, '2020-12-25 23:55:21', 0),
+(5, '::1', 'admin', 1, '2020-12-25 23:58:01', 0),
+(6, '::1', 'ridhaaf@gmail.com', 1, '2020-12-25 23:58:21', 1),
+(7, '::1', 'ridhaaf@gmail.com', 1, '2020-12-26 00:12:25', 1),
+(8, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-26 00:18:19', 1),
+(9, '::1', 'ridhaaf@gmail.com', 1, '2020-12-26 00:20:22', 1),
+(10, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-26 00:21:34', 1),
+(11, '::1', 'ridhaaf@gmail.com', 1, '2020-12-26 00:28:45', 1),
+(12, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-26 00:52:28', 1);
 
 -- --------------------------------------------------------
 
@@ -118,6 +138,14 @@ CREATE TABLE `auth_permissions` (
   `name` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `auth_permissions`
+--
+
+INSERT INTO `auth_permissions` (`id`, `name`, `description`) VALUES
+(1, 'manage-product', 'Manage All Product'),
+(2, 'order-product', 'Order Product');
 
 -- --------------------------------------------------------
 
@@ -201,7 +229,7 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `version`, `class`, `group`, `namespace`, `time`, `batch`) VALUES
-(1, '2017-11-20-223112', 'Myth\\Auth\\Database\\Migrations\\CreateAuthTables', 'default', 'Myth\\Auth', 1607675355, 1);
+(1, '2017-11-20-223112', 'Myth\\Auth\\Database\\Migrations\\CreateAuthTables', 'default', 'Myth\\Auth', 1608958632, 1);
 
 -- --------------------------------------------------------
 
@@ -251,6 +279,13 @@ CREATE TABLE `transaction` (
   `id_product` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `transaction`
+--
+
+INSERT INTO `transaction` (`id_transaction`, `nama_lengkap`, `alamat`, `kota_tujuan`, `kurir`, `pembayaran`, `id_product`) VALUES
+(1, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Bandung', 'TIKI', 'Indomaret', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -280,8 +315,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `username`, `password_hash`, `reset_hash`, `reset_at`, `reset_expires`, `activate_hash`, `status`, `status_message`, `active`, `force_pass_reset`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(2, 'adiefeskhart369@gmail.com', 'asdaw112233', '$2y$10$j3VjGz9M.oE61TqKmyejyuGLSfIhTlQ34jrCQBwKTKBqA1TNi2fFC', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2020-12-11 02:42:45', '2020-12-11 02:44:50', NULL),
-(3, 'ridhaaf@gmail.com', 'admin', '$2y$10$vkfULRzmppJHvEL1cy/AmOZuUtAiKslNC//pPuxYF3fMu9ODWDvFy', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2020-12-24 07:03:17', '2020-12-24 07:03:17', NULL);
+(1, 'ridhaaf@gmail.com', 'admin', '$2y$10$Z/D23R3ZHiv7ZicLMEh0qedonBOK/QGY0Fbijzy70SjfOYirVoV1a', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2020-12-26 00:12:11', '2020-12-26 00:12:11', NULL),
+(2, 'ridhaaf25@gmail.com', 'user', '$2y$10$r1BF417wH7mDJnFNYgq/S.NmXYMEP.05nsDu/ktYikfY/wF5DAmgS', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2020-12-26 00:12:49', '2020-12-26 00:12:49', NULL),
+(3, 'kangibing@gmail.com', 'kangibing', '$2y$10$jYXnffO9eyJhtChZfWx/oOTLV2tNKoufy8V8SVilUPesTjf/IPmDO', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2020-12-26 00:16:00', '2020-12-26 00:16:00', NULL);
 
 --
 -- Indexes for dumped tables
@@ -390,25 +426,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `auth_activation_attempts`
 --
 ALTER TABLE `auth_activation_attempts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `auth_groups`
 --
 ALTER TABLE `auth_groups`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `auth_logins`
 --
 ALTER TABLE `auth_logins`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `auth_permissions`
 --
 ALTER TABLE `auth_permissions`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `auth_reset_attempts`
@@ -420,7 +456,7 @@ ALTER TABLE `auth_reset_attempts`
 -- AUTO_INCREMENT for table `auth_tokens`
 --
 ALTER TABLE `auth_tokens`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `brand`
@@ -444,7 +480,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `id_transaction` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_transaction` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -455,6 +491,33 @@ ALTER TABLE `users`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `auth_groups_permissions`
+--
+ALTER TABLE `auth_groups_permissions`
+  ADD CONSTRAINT `auth_groups_permissions_group_id_foreign` FOREIGN KEY (`group_id`) REFERENCES `auth_groups` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `auth_groups_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `auth_permissions` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `auth_groups_users`
+--
+ALTER TABLE `auth_groups_users`
+  ADD CONSTRAINT `auth_groups_users_group_id_foreign` FOREIGN KEY (`group_id`) REFERENCES `auth_groups` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `auth_groups_users_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `auth_tokens`
+--
+ALTER TABLE `auth_tokens`
+  ADD CONSTRAINT `auth_tokens_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `auth_users_permissions`
+--
+ALTER TABLE `auth_users_permissions`
+  ADD CONSTRAINT `auth_users_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `auth_permissions` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `auth_users_permissions_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `product`

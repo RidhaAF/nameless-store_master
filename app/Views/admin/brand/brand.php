@@ -2,13 +2,12 @@
 
 <?= $this->section('content-admin'); ?>
 
-<!-- Start Card -->
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-5">
             <form action="" method="POST">
-                <div class="input-group mt-5">
-                    <input type="text" class="form-control" placeholder="Cari product.." name="keyword">
+                <div class="input-group mt-4">
+                    <input type="text" class="form-control" placeholder="Cari brand.." name="keyword">
                     <div class="input-group-append">
                         <button class="btn btn-dark" type="submit" name="submit"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
@@ -20,21 +19,23 @@
         </div>
     </div>
 
-    <div class="row mt-2 justify-content-center">
-        <table class="table table-hover table-bordered">
-            <tr class="table-active">
-                <th>ID Brand</th>
-                <th>Nama Brand</th>
-            </tr>
-            <?php foreach ($brand as $b) : ?>
-                <tr>
-                    <td><?= $b['id_brand']; ?></td>
-                    <td><?= $b['nama_brand']; ?></td>
+    <div class="row mt-4 justify-content-center">
+        <div class="col-md-8">
+            <table class="table table-hover table-bordered">
+                <tr class="table-active">
+                    <th>No.</th>
+                    <th>Nama Brand</th>
                 </tr>
-            <?php endforeach; ?>
-        </table>
+                <?php $i = 1; ?>
+                <?php foreach ($brand as $b) : ?>
+                    <tr>
+                        <th><?= $b['id_brand']; ?></th>
+                        <td><?= $b['nama_brand']; ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        </div>
     </div>
 </div>
-<!-- End Card -->
 
 <?= $this->endSection(); ?>

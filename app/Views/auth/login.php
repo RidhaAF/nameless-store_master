@@ -51,7 +51,7 @@
 
                         <br>
 
-                        <button type="submit" class="btn btn-primary btn-block"><?= lang('Auth.loginAction') ?></button>
+                        <button type="submit" class="btn btn-dark btn-block"><?= lang('Auth.loginAction') ?></button>
                     </form>
 
                     <hr>

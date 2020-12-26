@@ -15,7 +15,7 @@ class Email extends BaseConfig
 	/**
 	 * @var string
 	 */
-	public $fromName = 'WebNovaldy';
+	public $fromName = 'Nameless Store';
 
 	/**
 	 * @var string
@@ -62,7 +62,7 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $SMTPPass = 'Nameless Store';
+	public $SMTPPass = 'WebNovaldy';
 
 	/**
 	 * SMTP Port

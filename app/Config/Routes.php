@@ -33,14 +33,15 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::index');
 
-$routes->get('/admin', 'Admin::index');
-$routes->get('/admin/tambah-product', 'Admin::addProduct');
-$routes->delete('/admin/(:num)', 'Admin::delete/$1');
-$routes->get('/admin/edit-product/(:segment)', 'Admin::edit/$1');
-$routes->get('/admin/customers', 'Admin::users');
-$routes->get('/admin/brand', 'Admin::brand');
+$routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
+$routes->get('/admin/index', 'Admin::index', ['filter' => 'role:admin']);
+$routes->get('/admin/tambah-product', 'Admin::addProduct', ['filter' => 'role:admin']);
+$routes->delete('/admin/(:num)', 'Admin::delete/$1', ['filter' => 'role:admin']);
+$routes->get('/admin/edit-product/(:segment)', 'Admin::edit/$1', ['filter' => 'role:admin']);
+$routes->get('/admin/customers', 'Admin::users', ['filter' => 'role:admin']);
+$routes->get('/admin/brand', 'Admin::brand', ['filter' => 'role:admin']);
 $routes->get('/product/(:any)', 'Product::detail/$1');
-$routes->get('/transaction/(:any)', 'Transaction::index/$1');
+$routes->get('/transaction/(:any)', 'Transaction::index/$1', ['filter' => 'role:user']);
 
 /**
  * --------------------------------------------------------------------
