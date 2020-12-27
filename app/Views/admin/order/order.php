@@ -12,6 +12,7 @@
                 <th>Kota Tujuan</th>
                 <th>Kurir</th>
                 <th>Pembayaran</th>
+                <th>ID Product</th>
             </tr>
             <?php $i = 1 ?>
             <?php foreach ($transaction as $t) : ?>
@@ -22,6 +23,7 @@
                     <td><?= $t['kota_tujuan']; ?></td>
                     <td><?= $t['kurir']; ?></td>
                     <td><?= $t['pembayaran']; ?></td>
+                    <td><?= $t['id_product']; ?></td>
                 </tr>
             <?php endforeach; ?>
         </table>

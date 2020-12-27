@@ -34,7 +34,7 @@
 
         <div class="col-md-8 order-md-1">
             <h4 class="mb-3">Alamat Pengiriman</h4>
-            <form action="/transaction/saveTransaction" method="POST" enctype="multipart/form-data" id="ongkir">
+            <form action="/transaction/saveTransaction/<?= $product['id']; ?>" method="POST" enctype="multipart/form-data" id="ongkir">
                 <div class="mb-3">
                     <label for="fullName">Nama Lengkap</label>
                     <input type="name" class="form-control" id="fullName" name="nama_lengkap" placeholder="Andi Nugraha" value="" required>

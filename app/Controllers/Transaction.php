@@ -26,7 +26,7 @@ class Transaction extends BaseController
         return view('transaction/index', $data);
     }
 
-    public function saveTransaction()
+    public function saveTransaction($id)
     {
         $this->productModel->join('transaction', 'transaction.id_product=product.id');
         $this->transactionModel->save([
@@ -35,7 +35,8 @@ class Transaction extends BaseController
             'alamat' => $this->request->getVar('alamat'),
             'kota_tujuan' => $this->request->getVar('kota_tujuan'),
             'kurir' => $this->request->getVar('kurir'),
-            'pembayaran' => $this->request->getVar('pembayaran')
+            'pembayaran' => $this->request->getVar('pembayaran'),
+            'id_product' => $id
         ]);
 
         session()->setFlashdata('pesan', 'Transaksi berhasil.');
