@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 26, 2020 at 07:59 AM
+-- Generation Time: Dec 27, 2020 at 05:22 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -125,7 +125,12 @@ INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `succ
 (9, '::1', 'ridhaaf@gmail.com', 1, '2020-12-26 00:20:22', 1),
 (10, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-26 00:21:34', 1),
 (11, '::1', 'ridhaaf@gmail.com', 1, '2020-12-26 00:28:45', 1),
-(12, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-26 00:52:28', 1);
+(12, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-26 00:52:28', 1),
+(13, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-26 21:42:13', 1),
+(14, '::1', 'ridhaaf@gmail.com', 1, '2020-12-26 21:49:42', 1),
+(15, '::1', 'user', NULL, '2020-12-26 22:03:07', 0),
+(16, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-26 22:03:13', 1),
+(17, '::1', 'ridhaaf@gmail.com', 1, '2020-12-26 22:04:20', 1);
 
 -- --------------------------------------------------------
 
@@ -284,7 +289,8 @@ CREATE TABLE `transaction` (
 --
 
 INSERT INTO `transaction` (`id_transaction`, `nama_lengkap`, `alamat`, `kota_tujuan`, `kurir`, `pembayaran`, `id_product`) VALUES
-(1, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Bandung', 'TIKI', 'Indomaret', 0);
+(1, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Bandung', 'JNE', 'Transfer Bank', 2),
+(2, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Jakarta', 'TIKI', 'Kartu Kredit', 5);
 
 -- --------------------------------------------------------
 
@@ -438,7 +444,7 @@ ALTER TABLE `auth_groups`
 -- AUTO_INCREMENT for table `auth_logins`
 --
 ALTER TABLE `auth_logins`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `auth_permissions`
@@ -480,7 +486,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `id_transaction` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_transaction` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
