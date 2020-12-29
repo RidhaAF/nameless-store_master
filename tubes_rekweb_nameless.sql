@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2020 at 05:22 AM
+-- Generation Time: Dec 29, 2020 at 01:35 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -130,7 +130,20 @@ INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `succ
 (14, '::1', 'ridhaaf@gmail.com', 1, '2020-12-26 21:49:42', 1),
 (15, '::1', 'user', NULL, '2020-12-26 22:03:07', 0),
 (16, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-26 22:03:13', 1),
-(17, '::1', 'ridhaaf@gmail.com', 1, '2020-12-26 22:04:20', 1);
+(17, '::1', 'ridhaaf@gmail.com', 1, '2020-12-26 22:04:20', 1),
+(18, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-26 22:33:21', 1),
+(19, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-26 22:57:49', 1),
+(20, '::1', 'ridhaaf@gmail.com', 1, '2020-12-28 04:34:34', 1),
+(21, '::1', 'ridhaaf@gmail.com', 1, '2020-12-28 08:36:38', 1),
+(22, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-28 09:03:49', 1),
+(23, '::1', 'ridhaaf@gmail.com', 1, '2020-12-28 09:21:21', 1),
+(24, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-28 09:24:44', 1),
+(25, '::1', 'admin', NULL, '2020-12-28 10:19:39', 0),
+(26, '::1', 'ridhaaf@gmail.com', 1, '2020-12-28 10:19:46', 1),
+(27, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-28 10:20:04', 1),
+(28, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-28 16:49:21', 1),
+(29, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-28 17:50:21', 1),
+(30, '::1', 'ridhaaf@gmail.com', 1, '2020-12-28 17:59:57', 1);
 
 -- --------------------------------------------------------
 
@@ -211,7 +224,11 @@ INSERT INTO `brand` (`id_brand`, `nama_brand`) VALUES
 (1, 'iPhone'),
 (2, 'Samsung'),
 (3, 'Xiaomi'),
-(4, 'Oppo');
+(4, 'Oppo'),
+(5, 'Google'),
+(6, 'Vivo'),
+(7, 'Realme'),
+(8, 'OnePlus');
 
 -- --------------------------------------------------------
 
@@ -265,8 +282,16 @@ INSERT INTO `product` (`id`, `type`, `slug`, `price`, `os`, `storage`, `cpu`, `r
 (3, 'Mi 10T Pro 5G', 'mi-10t-pro', 8499000, 'Android 10', '32', 'Qualcomm SM8250 Snapdragon 865', '8GB', 'mi-10t-pro.png', 3),
 (4, '12 Pro', '12-pro', 18499000, 'iOS 14', '44', 'Apple A14 Bionic', '6GB', 'iphone-12-pro.png', 1),
 (5, 'Reno5 Pro 5G', 'reno5-pro', 8400000, 'Android 11', '128', 'Mediatek MT6889Z Dimensity 1000+', '8GB', 'reno5-pro.png', 4),
-(6, 'Redmi 21 Pro Max', 'redmi-21-pro-max', 5000000, 'Android 15', '123', 'Mediatech 1000KGG20K', '500GB', 'fold-2.png', 3),
-(7, '11 Pro Max', '11-pro-max', 21000000, 'iOS 13', '256GB', ' Apple A13 Bionic', '6GB', '1608620776_9e647ab270e1e6102e42.png', 1);
+(6, 'Redmi Note 9 Pro 5G', 'redmi-note-9-pro-5g', 4499000, 'Android 10', '256GB', 'Qualcomm SM7225 Snapdragon 750G', '8GB', '1609156195_9bf651628e9861fdcc34.png', 3),
+(7, '11 Pro Max', '11-pro-max', 21000000, 'iOS 13', '256GB', ' Apple A13 Bionic', '6GB', '1608620776_9e647ab270e1e6102e42.png', 1),
+(8, 'Galaxy Flip Z 5G', 'galaxy-flip-z-5g', 20999000, 'Android 10', '256GB', 'Qualcomm SM8250 Snapdragon 865+', '8GB', '1609151842_57806b08c9e4558c356c.png', 2),
+(9, 'Pixel 4 XL', 'pixel-4-xl', 9700000, 'Android 10', '128GB', 'Qualcomm SM8150 Snapdragon 855', '6GB', '1609151910_647a3bdc1998bb1e25cf.png', 5),
+(10, 'Galaxy Note 20 5G', 'galaxy-note-20-5g', 14999000, 'Android 10', '256GB', 'Qualcomm SM8250 Snapdragon 865+', '8GB', '1609158662_9ece30092a0b6888e32a.png', 2),
+(11, 'A53 5G', 'a53-5g', 2999000, 'Android 10', '128GB', 'MediaTek MT6853V Dimensity 720 5G', '6GB', '1609159059_911af53618433697a176.png', 4),
+(12, 'Pixel 5', 'pixel-5', 10300000, 'Android 11', '128GB', 'Qualcomm SM7250 Snapdragon 765G', '8GB', '1609200066_76bfcf25b470c05e555f.png', 5),
+(13, 'V20 2021', 'v20-2021', 4800000, 'Android 11', '128GB', 'Qualcomm SDM730 Snapdragon 730', '8GB', '1609200400_f51f88f804fe31e00924.png', 6),
+(14, 'SE 2020 2nd Gen', 'se-2020-2nd-gen', 7499000, 'iOS 13', '256GB', 'Apple A13 Bionic', '3GB', '1609200949_cfad69ba626d74204d07.png', 1),
+(15, 'Q2 Pro', 'q2-pro', 6500000, 'Android 10', '256GB', 'MediaTek Dimensity 800U 5G', '8GB', '1609201308_2b4c7e78cdd7c44bf2c2.png', 7);
 
 -- --------------------------------------------------------
 
@@ -289,8 +314,14 @@ CREATE TABLE `transaction` (
 --
 
 INSERT INTO `transaction` (`id_transaction`, `nama_lengkap`, `alamat`, `kota_tujuan`, `kurir`, `pembayaran`, `id_product`) VALUES
-(1, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Bandung', 'JNE', 'Transfer Bank', 2),
-(2, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Jakarta', 'TIKI', 'Kartu Kredit', 5);
+(1, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Bandung', 'JNE', 'Transfer Bank', 1),
+(2, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Jakarta', 'TIKI', 'Kartu Kredit', 10),
+(3, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Bandung', 'POS INDONESIA', 'Indomaret', 3),
+(4, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Jakarta', 'JNE', 'Alfamart', 9),
+(5, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Bandung', 'JNE', 'OVO', 8),
+(6, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Jakarta', 'TIKI', 'Kartu Kredit', 6),
+(7, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Bandung', 'POS INDONESIA', 'Kartu Kredit', 3),
+(8, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Jakarta', 'JNE', 'Transfer Bank', 11);
 
 -- --------------------------------------------------------
 
@@ -444,7 +475,7 @@ ALTER TABLE `auth_groups`
 -- AUTO_INCREMENT for table `auth_logins`
 --
 ALTER TABLE `auth_logins`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `auth_permissions`
@@ -468,7 +499,7 @@ ALTER TABLE `auth_tokens`
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `id_brand` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_brand` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -480,13 +511,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `id_transaction` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_transaction` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
