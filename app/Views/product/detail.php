@@ -15,13 +15,15 @@
                 <li class="list-group-item">
                     <h3><?= $product['nama_brand']; ?> <?= $product['type']; ?></h3>
                 </li>
-                <li class="list-group-item">Harga : <?= $product['price']; ?></li>
-                <li class="list-group-item">Operating System : <?= $product['os']; ?></li>
-                <li class="list-group-item">CPU : <?= $product['cpu']; ?></li>
-                <li class="list-group-item">RAM : <?= $product['ram']; ?></li>
-                <li class="list-group-item">Storage : <?= $product['storage']; ?></li>
+                <li class="list-group-item"><b>Harga :</b> Rp. <?= number_format($product['price'], 0, 0, '.'); ?>,-</li>
+                <li class="list-group-item"><b>Operating System :</b> <?= $product['os']; ?></li>
+                <li class="list-group-item"><b>CPU :</b> <?= $product['cpu']; ?></li>
+                <li class="list-group-item"><b>RAM :</b> <?= $product['ram']; ?></li>
+                <li class="list-group-item"><b>Storage :</b> <?= $product['storage']; ?></li>
                 <hr>
-                <a href="/transaction/<?= $product['slug']; ?>" class="btn btn-dark">Beli</a>
+                <a href="/cart/beli/<?= $product['id']; ?>" class="btn btn-dark">
+                    <h6>+ Keranjang</h6>
+                </a>
             </ul>
         </div>
     </div>

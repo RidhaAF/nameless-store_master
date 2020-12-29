@@ -35,7 +35,7 @@ class Admin extends BaseController
 
         $data = [
             // 'product' => $this->productModel->findAll(),
-            'product' => $product->paginate(10, 'product'),
+            'product' => $product->paginate(5, 'product'),
             'pager' => $this->productModel->join('brand', 'brand.id_brand=product.id_brand')->pager,
             'currentPage' => $currentPage
         ];
@@ -241,8 +241,10 @@ class Admin extends BaseController
 
     public function order()
     {
+        $transaction = $this->transactionModel->join('product', 'product.id = transaction.id_product');
+
         $data = [
-            'transaction' => $this->transactionModel->findAll()
+            'transaction' => $transaction->findAll()
         ];
 
         // cara connect db dengan model

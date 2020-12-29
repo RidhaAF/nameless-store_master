@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\ProductModel;
+use Wildanfuady\WFcart\WFcart;
 
 class Product extends BaseController
 {
@@ -11,13 +12,11 @@ class Product extends BaseController
     public function __construct()
     {
         $this->productModel = new ProductModel();
+        $this->cart = new WFcart();
     }
 
     public function index()
     {
-
-        $currentPage = $this->request->getVar('page_product') ? $this->request->getVar('page_product') : 1;
-
         $keyword = $this->request->getVar('keyword');
         if ($keyword) {
             $product = $this->productModel->search($keyword);
@@ -27,9 +26,9 @@ class Product extends BaseController
 
         $data = [
             // 'product' => $this->productModel->findAll(),
-            'product' => $product->paginate(10, 'product'),
-            'pager' => $this->productModel->join('brand', 'brand.id_brand=product.id_brand')->pager,
-            'currentPage' => $currentPage
+            'product' => $product->paginate(8, 'product'),
+            'pager' => $this->productModel->pager,
+            'total' => $this->cart->totals()
         ];
 
         // cara connect db dengan model

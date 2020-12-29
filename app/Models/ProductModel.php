@@ -22,4 +22,9 @@ class ProductModel extends Model
 
         return $this->join('brand', 'brand.id_brand=product.id_brand')->where(['slug' => $slug])->first();
     }
+
+    public function getProductId($id)
+    {
+        return $this->db->table($this->table)->where('id', $id)->get()->getRowArray();
+    }
 }

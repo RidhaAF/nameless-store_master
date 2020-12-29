@@ -3,9 +3,9 @@
 <?= $this->section('content'); ?>
 
 <!-- Start Card -->
-<div class="container">
+<div class="container justify-content-center">
     <div class="row mt-5 justify-content-center">
-        <div class="col-md-5">
+        <div class="col-md-6">
             <form action="" method="POST">
                 <div class="input-group mt-5">
                     <input type="text" class="form-control" placeholder="Cari produk.." name="keyword">
@@ -20,20 +20,37 @@
             </form>
         </div>
     </div>
+    <?php if (session()->getFlashdata('pesan')) : ?>
+        <div class="alert alert-success mt-4" role="alert">
+            <?= session()->getFlashdata('pesan'); ?>
+        </div>
+    <?php endif; ?>
+    <?php if (session()->getFlashdata('success') != null) : ?>
+        <div class="alert alert-success mt-4" role="alert">
+            <?= session()->getFlashdata('success'); ?>
+        </div>
+    <?php endif; ?>
     <div class="row mt-2">
         <?php foreach ($product as $p) : ?>
             <div class="col-sm-3 mt-3">
                 <div class="card" style="width: 16rem;">
                     <img src="/img/<?= $p['image']; ?>" class="card-img-top">
-                    <div class="card-body">
+                    <div class="card-body shadow">
                         <h6 class="card-title"><?= $p['nama_brand']; ?> <?= $p['type']; ?></h6>
-                        <p class="card-text">Rp. <?= $p['price']; ?>,-</p>
+                        <p class="card-text">Rp. <?= number_format($p['price'], 0, 0, '.'); ?>,-</p>
                         <p><a href="/product/<?= $p['slug']; ?>">Spesifikasi Lengkap</a></p>
-                        <a href="/transaction/<?= $p['slug']; ?>" class="btn btn-primary">Beli Sekarang</a>
+                        <a href="/cart/beli/<?= $p['id']; ?>" class="btn btn-dark">
+                            <h6>+ Keranjang</h6>
+                        </a>
                     </div>
                 </div>
             </div>
         <?php endforeach; ?>
+    </div>
+    <div class="row mt-4">
+        <div class="col">
+            <?= $pager->links('product', 'product_pagination'); ?>
+        </div>
     </div>
 </div>
 <!-- End Card -->

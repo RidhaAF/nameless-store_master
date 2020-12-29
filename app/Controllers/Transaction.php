@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\ProductModel;
 use App\Models\TransactionModel;
+use Wildanfuady\WFcart\WFcart;
 
 class Transaction extends BaseController
 {
@@ -14,12 +15,19 @@ class Transaction extends BaseController
     {
         $this->productModel = new ProductModel();
         $this->transactionModel = new TransactionModel();
+        // membuat variabel untuk menampung class WFcart
+        $this->cart = new WFcart();
     }
 
-    public function index($slug)
+    public function index()
     {
+        // $data = [
+        //     'product' => $this->productModel->getProduct($slug)
+        // ];
+
         $data = [
-            'product' => $this->productModel->getProduct($slug)
+            'items' => $this->cart->totals(),
+            'total' => $this->cart->count_totals()
         ];
 
         // cara connect db dengan model

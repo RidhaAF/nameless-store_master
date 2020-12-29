@@ -11,30 +11,33 @@
         <div class="col-md-4 order-md-2 mb-4">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span class="text-muted">Keranjang</span>
-                <span class="badge badge-secondary badge-pill">1</span>
+                <span class="badge badge-secondary badge-pill"><?= count($items); ?></span>
             </h4>
             <ul class="list-group mb-3">
-                <li class="list-group-item d-flex justify-content-between lh-condensed">
-                    <div>
-                        <img src="/img/<?= $product['image']; ?>" width="100">
-                    </div>
-                    <span>
-                        <h6 class="my-0"><?= $product['nama_brand']; ?> <?= $product['type']; ?></h6>
-                        <span class="text-muted">Rp. <?= $product['price']; ?>,-</span>
-                    </span>
-                </li>
+                <?php foreach ($items as $key => $item) : ?>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <img src="/img/<?= $item['image']; ?>" width="100">
+                        </div>
+                        <span>
+                            <h6 class="my-0"><?= $item['type']; ?></h6>
+                            <span class="text-muted">Rp. <?= number_format($item['quantity'] * $item['price'], 0, 0, '.'); ?>,-</span>
+                        </span>
+                        <p>(<?= $item['quantity']; ?>)</p>
+                    </li>
+                <?php endforeach; ?>
                 <li class="list-group-item d-flex justify-content-between">
                     <span>
                         <h6>Total</h6>
                     </span>
-                    <strong>Rp. <?= $product['price']; ?>,-</strong>
+                    <strong>Rp. <?= number_format($total, 0, 0, '.'); ?>,-</strong>
                 </li>
             </ul>
         </div>
 
         <div class="col-md-8 order-md-1">
             <h4 class="mb-3">Alamat Pengiriman</h4>
-            <form action="/transaction/saveTransaction/<?= $product['id']; ?>" method="POST" enctype="multipart/form-data" id="ongkir">
+            <form action="/transaction/saveTransaction/<?= $item['id']; ?>" method="POST" enctype="multipart/form-data" id="ongkir">
                 <div class="mb-3">
                     <label for="fullName">Nama Lengkap</label>
                     <input type="name" class="form-control" id="fullName" name="nama_lengkap" placeholder="Andi Nugraha" value="" required>

@@ -39,10 +39,9 @@
             <div class="col-sm-4 mt-3 d-flex justify-content-center">
                 <div class="card" style="width: 20rem;">
                     <img src="/img/<?= $p['image']; ?>" class="card-img-top">
-                    <div class="card-body">
+                    <div class="card-body shadow">
                         <h6 class="card-title"><?= $p['nama_brand']; ?> <?= $p['type']; ?></h6>
-                        <p class="card-text">Rp. <?= $p['price']; ?>,-</p>
-                        <a href="/transaction/<?= $p['slug']; ?>" class="btn btn-primary">Beli Sekarang</a>
+                        <p class="card-text">Rp. <?= number_format($p['price'], 0, 0, '.'); ?>,-</p>
                     </div>
                 </div>
             </div>
