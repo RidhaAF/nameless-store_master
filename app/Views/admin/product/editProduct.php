@@ -4,8 +4,8 @@
 
 <div class="container">
     <div class="row mt-5 justify-content-center">
-        <div class="col-12 mt-5">
-            <h2 class="text-center">Form Ubah Produk</h2>
+        <div class="col-12">
+            <h2 class="text-center">Ubah Produk</h2>
         </div>
         <div class="col-8">
             <form action="/admin/update/<?= $product['id']; ?>" method="POST" enctype="multipart/form-data">
@@ -16,14 +16,12 @@
                     <label for="brand" class="col-sm-2 col-form-label">Brand</label>
                     <div class="col-sm-10">
                         <select class="form-control <?= ($validation->hasError('id_brand')) ? 'is-invalid' : ''; ?> is-invalid" id="brand" name="id_brand" aria-label="Default select example">
-                            <option selected value="first">
-                                <-- Pilih Brand -->
-                            </option>
+                            <option value="first">-- Pilih Brand --</option>
                             <?php foreach ($brand as $b) : ?>
                                 <option value="<?= $b['id_brand']; ?>"><?= $b['nama_brand']; ?></option>
                             <?php endforeach; ?>
                         </select>
-                        <div class="invalid-feedback">Pilih Brand!
+                        <div id="invalidCheck3Feedback" class="invalid-feedback">Pilih Brand!
                             <?= $validation->getError('id_brand'); ?>
                         </div>
                     </div>

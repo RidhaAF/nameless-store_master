@@ -4,8 +4,8 @@
 
 <div class="container">
     <div class="row mt-5 justify-content-center">
-        <div class="col-12 mt-5">
-            <h2 class="text-center">Form Tambah Produk</h2>
+        <div class="col-12">
+            <h2 class="text-center">Tambah Produk</h2>
         </div>
         <div class="col-8">
             <form action="/admin/saveProduct" method="POST" enctype="multipart/form-data">
@@ -15,7 +15,7 @@
                     <div class="col-sm-10">
                         <select class="form-control" id="brand" name="id_brand" aria-label="Default select example">
                             <option selected>
-                                <-- Pilih Brand -->
+                                -- Pilih Brand --
                             </option>
                             <?php foreach ($brand as $b) : ?>
                                 <option value="<?= $b['id_brand']; ?>"><?= $b['nama_brand']; ?></option>
@@ -26,7 +26,7 @@
                 <div class="form-group row">
                     <label for="type" class="col-sm-2 col-form-label">Tipe</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('type')) ? 'is-invalid' : ''; ?>" id="type" name="type" placeholder="iPhone 12 Pro">
+                        <input type="text" class="form-control <?= ($validation->hasError('type')) ? 'is-invalid' : ''; ?>" id="type" name="type" placeholder="12 Pro Max">
                         <div id="invalidCheck3Feedback" class="invalid-feedback">
                             <?= $validation->getError('type'); ?>
                         </div>

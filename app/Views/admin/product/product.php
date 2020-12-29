@@ -37,18 +37,21 @@
             <thead>
                 <tr>
                     <th scope="col"></th>
+                    <th scope="col"></th>
                     <th scope="col">Nama Produk</th>
                     <th scope="col">Harga</th>
                     <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
+                <?php $i = 1 + (5 * ($currentPage - 1)); ?>
                 <?php foreach ($product as $p) : ?>
                     <tr>
-                        <td><img src="/img/<?= $p['image']; ?>" class="gambar" width="100"></td>
-                        <td><?= $p['nama_brand']; ?> <?= $p['type']; ?></td>
-                        <td>Rp. <?= $p['price']; ?>,-</td>
-                        <td>
+                        <th class="align-middle"><?= $i++; ?></th>
+                        <td class="align-middle"><img src="/img/<?= $p['image']; ?>" class="gambar" width="100"></td>
+                        <td class="align-middle"><?= $p['nama_brand']; ?> <?= $p['type']; ?></td>
+                        <td class="align-middle">Rp. <?= number_format($p['price'], 0, 0, '.'); ?>,-</td>
+                        <td class="align-middle">
                             <span>
                                 <a href="/admin/edit-product/<?= $p['slug']; ?>" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -71,6 +74,7 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
+        <?= $pager->links('product', 'product_pagination'); ?>
     </div>
 </div>
 
