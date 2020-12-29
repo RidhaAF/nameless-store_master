@@ -1,9 +1,16 @@
 <?= $this->extend($config->viewLayout) ?>
 <?= $this->section('main') ?>
 
-<div class="container">
+<div class="container" id="login">
     <div class="row">
-        <div class="col-sm-6 offset-sm-3">
+        <div class="col-sm-6 login">
+            <div class="login-plag">
+                <img src="/img/icon-black.png" alt="">
+                <p>Premium Reseller Handphone Terkemuka di Indonesia.</p>
+                <p>Gabung dan rasakan kemudahan bertransaksi di Nemeless Store</p>
+            </div>
+        </div>
+        <div class="col-sm-6">
 
             <div class="card">
                 <h2 class="card-header"><?= lang('Auth.loginTitle') ?></h2>
@@ -55,13 +62,14 @@
                     </form>
 
                     <hr>
-
-                    <?php if ($config->allowRegistration) : ?>
-                        <p><a href="<?= route_to('register') ?>"><?= lang('Auth.needAnAccount') ?></a></p>
-                    <?php endif; ?>
-                    <?php if ($config->activeResetter) : ?>
-                        <p><a href="<?= route_to('forgot') ?>"><?= lang('Auth.forgotYourPassword') ?></a></p>
-                    <?php endif; ?>
+                    <div class="footer-login">
+                        <?php if ($config->allowRegistration) : ?>
+                            <p><a href="<?= route_to('register') ?>"><?= lang('Auth.needAnAccount') ?></a></p>
+                        <?php endif; ?>
+                        <?php if ($config->activeResetter) : ?>
+                            <p><a href="<?= route_to('forgot') ?>"><?= lang('Auth.forgotYourPassword') ?></a></p>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
 
