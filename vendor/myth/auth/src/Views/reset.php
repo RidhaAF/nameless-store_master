@@ -7,7 +7,7 @@
             <div class="login-plag">
                 <img src="/img/icon-black.png" alt="">
                 <p>Premium Reseller Handphone Terkemuka di Indonesia.</p>
-                <p>Gabung dan rasakan kemudahan bertransaksi di Nemeless Store</p>
+                <p>Gabung dan rasakan kemudahan bertransaksi di Nameless Store</p>
             </div>
         </div>
         <div class="col-sm-6">
