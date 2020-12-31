@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2020 at 01:35 AM
+-- Generation Time: Dec 31, 2020 at 11:34 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -143,7 +143,23 @@ INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `succ
 (27, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-28 10:20:04', 1),
 (28, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-28 16:49:21', 1),
 (29, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-28 17:50:21', 1),
-(30, '::1', 'ridhaaf@gmail.com', 1, '2020-12-28 17:59:57', 1);
+(30, '::1', 'ridhaaf@gmail.com', 1, '2020-12-28 17:59:57', 1),
+(31, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-28 18:40:42', 1),
+(32, '::1', 'ridhaaf@gmail.com', 1, '2020-12-29 05:14:36', 1),
+(33, '::1', 'user', NULL, '2020-12-29 05:24:03', 0),
+(34, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-29 05:24:11', 1),
+(35, '::1', 'ridhaaf@gmail.com', 1, '2020-12-29 11:05:19', 1),
+(36, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-29 11:06:33', 1),
+(37, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-30 00:26:11', 1),
+(38, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-30 06:40:50', 1),
+(39, '::1', 'ridhaaf@gmail.com', 1, '2020-12-30 09:40:25', 1),
+(40, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-30 09:41:19', 1),
+(41, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-30 21:50:59', 1),
+(42, '::1', 'ridhaaf@gmail.com', 1, '2020-12-30 21:52:35', 1),
+(43, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-30 22:18:11', 1),
+(44, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-31 00:50:21', 1),
+(45, '::1', 'ridhaaf@gmail.com', 1, '2020-12-31 01:18:48', 1),
+(46, '::1', 'ridhaaf25@gmail.com', 2, '2020-12-31 01:20:16', 1);
 
 -- --------------------------------------------------------
 
@@ -321,7 +337,11 @@ INSERT INTO `transaction` (`id_transaction`, `nama_lengkap`, `alamat`, `kota_tuj
 (5, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Bandung', 'JNE', 'OVO', 8),
 (6, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Jakarta', 'TIKI', 'Kartu Kredit', 6),
 (7, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Bandung', 'POS INDONESIA', 'Kartu Kredit', 3),
-(8, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Jakarta', 'JNE', 'Transfer Bank', 11);
+(8, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Jakarta', 'JNE', 'Transfer Bank', 11),
+(15, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Makassar', 'TIKI', 'Indomaret', 12),
+(17, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Balikpapan', 'TIKI', 'OVO', 8),
+(18, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Denpasar', 'POS INDONESIA', 'Kartu Kredit', 13),
+(19, 'Ridha Ahmad Firdaus', 'Jl. Melati', 'Malang', 'JNE', 'OVO', 11);
 
 -- --------------------------------------------------------
 
@@ -475,7 +495,7 @@ ALTER TABLE `auth_groups`
 -- AUTO_INCREMENT for table `auth_logins`
 --
 ALTER TABLE `auth_logins`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `auth_permissions`
@@ -517,7 +537,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `id_transaction` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_transaction` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `users`
