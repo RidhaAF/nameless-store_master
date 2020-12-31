@@ -41,7 +41,7 @@ $routes->get('/admin/edit-product/(:segment)', 'Admin::edit/$1', ['filter' => 'r
 $routes->get('/admin/customers', 'Admin::users', ['filter' => 'role:admin']);
 $routes->get('/admin/brand', 'Admin::brand', ['filter' => 'role:admin']);
 $routes->get('/product/(:any)', 'Product::detail/$1');
-$routes->get('/transaction/(:any)', 'Transaction::index/$1', ['filter' => 'role:user']);
+$routes->get('/transaction', 'Transaction::index', ['filter' => 'role:user']);
 $routes->get('/cart', 'Cart::index', ['filter' => 'role:user']);
 
 /**

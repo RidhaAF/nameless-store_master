@@ -28,9 +28,13 @@
                 <?php endforeach; ?>
                 <li class="list-group-item d-flex justify-content-between">
                     <span>
-                        <h6>Total</h6>
+                        <p>Ongkir</p>
+                        <h5>Total</h5>
                     </span>
-                    <strong>Rp. <?= number_format($total, 0, 0, '.'); ?>,-</strong>
+                    <span>
+                        <p class="text-right" id="harga_ongkir">Rp. 10.000,-</p>
+                        <strong>Rp. <?= number_format($total + 10000, 0, 0, '.'); ?>,-</strong>
+                    </span>
                 </li>
             </ul>
         </div>
@@ -58,13 +62,14 @@
                     <div class="col-md-6 mb-3">
                         <label for="tujuan">Kota Tujuan</label>
                         <select class="custom-select d-block w-100" id="kota_tujuan" name="kota_tujuan" required>
-                            <option>Bandung</option>
-                            <option>Jakarta</option>
+                            <option>Pilih Kota</option>
                         </select>
                     </div>
+
                     <div class="col-md-6 mb-3">
                         <label for="kurir">Kurir</label>
                         <select class="custom-select d-block w-100" id="kurir" name="kurir" required>
+                            <option value="">Pilih Kurir</option>
                             <option value="JNE">JNE</option>
                             <option value="TIKI">TIKI</option>
                             <option value="POS INDONESIA">POS Indonesia</option>
@@ -110,5 +115,16 @@
 <?= $this->endSection(); ?>
 
 <?= $this->section('script'); ?>
-
+<script>
+    $('document').ready(function() {
+        $.ajax({
+            type: "GET",
+            dataType: "html",
+            url: "<?= site_url('transaction/getcity') ?>",
+            success: function(data) {
+                $("select#kota_tujuan").html(data);
+            }
+        });
+    });
+</script>
 <?= $this->endsection(); ?>

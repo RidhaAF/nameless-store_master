@@ -42,7 +42,7 @@
                                     <?php endforeach; ?>
                                     <tr>
                                         <td colspan="3" class="text-right">
-                                            <h6>Jumlah</h6>
+                                            <h6>Total</h6>
                                         </td>
                                         <td>
                                             <h6>Rp. <?= number_format($total, 0, 0, '.'); ?></h6>
