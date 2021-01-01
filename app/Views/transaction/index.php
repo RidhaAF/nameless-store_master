@@ -52,7 +52,7 @@
 
                 <div class="mb-3">
                     <label for="address">Alamat</label>
-                    <input type="address" class="form-control" id="address" name="alamat" placeholder="Jl. Melati No.123" required>
+                    <textarea type="address" rows="5" class="form-control" id="address" name="alamat" placeholder="Jl. Melati No.123" required></textarea>
                     <div class="invalid-feedback">
                         Masukkan alamat pengiriman.
                     </div>

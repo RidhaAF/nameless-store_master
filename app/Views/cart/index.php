@@ -6,7 +6,7 @@
     <div class="row mt-5">
         <div class="col">
             <div class="card mt-5">
-                <div class="card-header">
+                <div class="card-header cart">
                     <h6>Keranjang (<?= count($items); ?>)</h6>
                 </div>
                 <div class="card-body">
@@ -47,6 +47,7 @@
                                         <td>
                                             <h6>Rp. <?= number_format($total, 0, 0, '.'); ?></h6>
                                         </td>
+                                        <td>&nbsp;</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -58,11 +59,15 @@
 
                     <?php if (count($items) == 0) { // jika cart kosong, maka tampilkan: 
                     ?>
-                        <h3>Keranjang belanja Anda kosong.</h3>
-                        <a href="<?= base_url('product'); ?>" class="btn btn-dark">Belanja Dulu Yuk!</a>
+                        <div class="text-kosong">
+                            <h3>Keranjang belanja Anda kosong.</h3>
+                            <a href="<?= base_url('product'); ?>" class="btn btn-dark">Belanja Dulu Yuk!</a>
+                        </div>
                     <?php } else { // jika cart tidak kosong, tampilkan: 
                     ?>
-                        <a href="<?= base_url('transaction'); ?>" class="btn btn-dark">Checkout</a>
+                        <div class="text-ada">
+                            <a href="<?= base_url('transaction'); ?>" class="btn btn-dark">Checkout</a>
+                        </div>
                     <?php } ?>
                 </div>
             </div>

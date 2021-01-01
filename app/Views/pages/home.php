@@ -34,10 +34,10 @@
 
     <!-- Start Card -->
     <div class="container">
-        <h1 class="text-center mt-4 mb-3">Produk Teratas</h1>
+        <h1 class="text-center mt-5 mb-4">Produk Teratas</h1>
         <div class="row mt-2">
             <?php foreach ($product as $p) : ?>
-                <div class="col-sm-4 mt-3">
+                <div class="col-sm-4 mt-3" style="display: flex; align-items: center; justify-content: center;">
                     <a href="/product/<?= $p['slug']; ?>" class="info-pro">
                         <div class="card card-product" style="width: 16rem;">
                             <img src="/img/<?= $p['image']; ?>" class="card-img-top">

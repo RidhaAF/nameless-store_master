@@ -60,6 +60,11 @@
   border-radius: 0;
 }
 
+.card-product.btn {
+  width: 100%;
+  border-radius: 0;
+}
+
 .page-item.active .page-link {
   background-color: #212529;
   border-color: #333333;
@@ -94,4 +99,26 @@
 
 #sec-3 .col-sm-3 .text p {
   font-size: 14px;
+}
+
+.detail-pro {
+  padding: 20px 0px 5px 20px;
+}
+
+p.detail-pro {
+  border-top: 1px solid rgb(229, 231, 233);
+}
+
+.text-ada {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.text-ada .btn {
+  padding: 12px 30px;
+}
+
+.card-header.cart {
+  background-color: #333333;
+  color: #ffffff;
 }

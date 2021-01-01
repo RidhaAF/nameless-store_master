@@ -16,7 +16,7 @@
     <title>Nameless Store</title>
 </head>
 
-<body class="bg-light">
+<body>
 
     <?= $this->include('layout/navbar'); ?>
 
